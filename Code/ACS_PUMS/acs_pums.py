@@ -86,7 +86,6 @@ def downloadOldPumaNewPumaFile(data_dir: str):
 
 
 def crossWalkOldPumaNewPuma(all_eligibility_df: pd.DataFrame, crosswalk_file: str) -> pd.DataFrame:
-
     """
     This function will crosswalk the PUMS data from 2012 pumas to 2020 pumas. It does so by reading the crosswalk file
     and creating a dictionary with the 2012 puma codes as keys and the 2020 puma codes as values. It then iterates
@@ -176,7 +175,6 @@ def crossWalkOldPumaNewPuma(all_eligibility_df: pd.DataFrame, crosswalk_file: st
 
 
 def crosswalkPUMAData(df: pd.DataFrame, crosswalk_dict: dict, source_column: str, target_column: str) -> pd.DataFrame:
-
     """
     This function will crosswalk the pums data from puma to another geography. It does so by reading the crosswalk file
     and creating a dictionary with the puma codes as keys and the new geography codes as values. It then iterates
@@ -637,11 +635,10 @@ def everyStateEligibility(data_directory: str):
     del household_df
 
 
-def testing_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, has_ssip: int = 1, has_hins4: int = 1,
-                        has_snap: int = 1, geography: str = "Public-use microdata area (PUMA)",
-                        aian: int = 0, asian: int = 0, black: int = 0, nhpi: int = 0, white: int = 0, hispanic: int = 0,
-                        veteran: int = 0, elderly: int = 0, disability: int = 0):
-
+def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, has_ssip: int = 1, has_hins4: int = 1,
+                          has_snap: int = 1, geography: str = "Public-use microdata area (PUMA)",
+                          aian: int = 0, asian: int = 0, black: int = 0, nhpi: int = 0, white: int = 0, hispanic: int = 0,
+                          veteran: int = 0, elderly: int = 0, disability: int = 0):
     """
     This function will determine eligibility for ACP for all states. It does so by iterating through all the states and
     reading the eligibility data for each state. It will then aggregate the data by the geography specified. It will
@@ -893,9 +890,11 @@ def testing_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, has_
                         "Current " + population_name + " Eligible"]
                     main_df["difference_percentage_" + population_var] = (main_df["difference_" + population_var] /
                                                                           main_df["Current " + population_name +
-                                                                                  " Eligible"] * 100)
+                                                                                  " Eligible"] * 100).round(2)
                     main_df = main_df.drop(
-                        columns=[population_name + " Eligible", "Current " + population_name + " Eligible"])
+                        columns=[population_name + " Eligible", "Current " + population_name + " Eligible", "difference_" + population_var])
+
+            main_df = main_df.drop(columns=["Num Eligible", "Num Ineligible"])
 
             # Combine duplicate columns
             main_df = main_df.loc[:, ~main_df.columns.duplicated()]
@@ -977,17 +976,59 @@ def testing_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, has_
 
                     # Calculate the difference percentage
                     new_df["difference_percentage_" + population_var] = (new_df["difference_" + population_var] /
-                                                                          new_df["Current " + population_name +
-                                                                                  " Eligible"] * 100)
+                                                                         new_df["Current " + population_name +
+                                                                                " Eligible"] * 100).round(2)
                     new_df = new_df.drop(
-                        columns=[population_name + " Eligible", "Current " + population_name + " Eligible"])
+                        columns=[population_name + " Eligible", "Current " + population_name + " Eligible",
+                                 "difference_" + population_var])
 
-                    # Round the difference percentage column to two decimal places
-                    new_df["difference_percentage_" + population_var] = new_df[
-                        "difference_percentage_" + population_var].round(2)
+            new_df = new_df.drop(columns=["Num Eligible", "Num Ineligible"])
 
             # Combine duplicate columns
             new_df = new_df.loc[:, ~new_df.columns.duplicated()]
 
         # Save the dataframe to a csv file
         new_df.to_csv(file_name, index=False)
+
+
+def cleanData(data_dir: str):
+    pums_folder = data_dir + "ACS_PUMS/"
+    test_folder = pums_folder + "Test_Data/"
+
+
+    all_files = [f for f in os.listdir(test_folder) if os.path.isfile(os.path.join(test_folder, f))]
+    geographies = [f.split(".")[0].split("-")[-1] for f in all_files if f.endswith(".csv")]
+    geographies = list(set(geographies))
+
+    for geography in geographies:
+        main_df = pd.DataFrame()
+        for file in os.listdir(test_folder):
+            if file.endswith(".csv") and geography in file and "combined" not in file:
+                povpip = file.split("_")[3]
+                df = pd.read_csv(test_folder + file, header=0, dtype={geography: str})
+
+                columns = df.columns.tolist()
+                # For columns that are not the geography, add the povpip to the column name
+                for column in columns:
+                    if geography == column:
+                        pass
+                    elif "Current" in column:
+                        pass
+                    else:
+                        df = df.rename(columns={column: column + "_" + povpip})
+                columns = df.columns.tolist()
+                new_columns = [columns[0], columns[2], columns[1]] + columns[3:]
+                df = df[new_columns]
+
+                if main_df.empty:
+                    main_df = df
+                else:
+                    main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible"], how="outer")
+
+        main_df.to_csv(test_folder + f"combined-{geography}.csv", index=False)
+
+
+
+
+if __name__ == '__main__':
+    cleanData("../../Data/")
