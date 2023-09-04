@@ -1148,18 +1148,6 @@ def cleanData(data_dir: str):
                     else:
                         df = df.rename(columns={column: column + "_" + povpip})
 
-                # Move the current percentage eligible column to the second position
-                columns = df.columns.tolist()
-
-                # Remove the current percentage eligible column
-                columns.remove("Current Percentage Eligible")
-
-                # Add the current percentage eligible column to the second position
-                columns.insert(1, "Current Percentage Eligible")
-
-                # Reassign the columns
-                df = df[columns]
-
                 # If the main dataframe is empty, set it equal to the dataframe
                 if main_df.empty:
                     main_df = df
@@ -1174,6 +1162,19 @@ def cleanData(data_dir: str):
                     elif geography == "county":
                         main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible", "rural"],
                                            how="outer")
+
+        # Move the current percentage eligible column to the second position
+        columns = main_df.columns.tolist()
+
+        # Remove the current percentage eligible column
+        columns.remove("Current Percentage Eligible")
+
+        # Add the current percentage eligible column to the second position
+        columns.insert(1, "Current Percentage Eligible")
+
+        # Reassign the columns
+        main_df = main_df[columns]
+
 
         # If the code column is county, make the rural column be the second column
         if geography == "county":
