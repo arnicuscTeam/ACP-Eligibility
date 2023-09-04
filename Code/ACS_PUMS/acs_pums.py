@@ -1087,40 +1087,90 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
 
 
 def cleanData(data_dir: str):
+
+    """
+    This function will clean the test data and combine it into one file. It does so by iterating through all the
+    files in the test data folder and combining them into one file for each geography.
+    :param data_dir:
+    :return: None, but saves the data to csv files
+    """
+
+    # Path to relevant folders
     pums_folder = data_dir + "ACS_PUMS/"
     test_folder = pums_folder + "Test_Data/"
 
+    # Get all the files in the test folder
     all_files = [f for f in os.listdir(test_folder) if os.path.isfile(os.path.join(test_folder, f))]
+
+    # Get all the geographies
     geographies = [f.split(".")[0].split("-")[-1] for f in all_files if f.endswith(".csv")]
+
+    # Remove duplicates
     geographies = list(set(geographies))
 
+    # Iterate through all the geographies
     for geography in geographies:
+
+        # Initialize the main dataframe
         main_df = pd.DataFrame()
+
+        # Iterate through all the files in the test folder
         for file in os.listdir(test_folder):
+
+            # Only read the csv files that are for the current geography and are not the combined file
             if file.endswith(".csv") and geography in file and "combined" not in file:
+
+                # Get the povpip
                 povpip = file.split("_")[3]
+
+                # Read the file
                 df = pd.read_csv(test_folder + file, header=0, dtype={geography: str})
 
+                # Rename the columns
                 columns = df.columns.tolist()
+
                 # For columns that are not the geography, add the povpip to the column name
                 for column in columns:
+
+                    # If the column is the geography, then do not add the povpip
                     if geography == column:
                         pass
+
+                    # If the column is the current percentage eligible, then do not add the povpip to the column name
                     elif "Current" in column:
                         pass
+
+                    # If the column is rural, then do not add the povpip to the column name
                     elif "rural" in column:
                         pass
+
+                    # Else, add the povpip to the column name
                     else:
                         df = df.rename(columns={column: column + "_" + povpip})
-                columns = df.columns.tolist()
-                new_columns = [columns[0], columns[2], columns[1]] + columns[3:]
-                df = df[new_columns]
 
+                # Move the current percentage eligible column to the second position
+                columns = df.columns.tolist()
+
+                # Remove the current percentage eligible column
+                columns.remove("Current Percentage Eligible")
+
+                # Add the current percentage eligible column to the second position
+                columns.insert(1, "Current Percentage Eligible")
+
+                # Reassign the columns
+                df = df[columns]
+
+                # If the main dataframe is empty, set it equal to the dataframe
                 if main_df.empty:
                     main_df = df
+
+                # Else, merge the dataframes
                 else:
+                    # If the geography is not county, then merge the dataframes on the geography and current percentage
                     if geography != "county":
                         main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible"], how="outer")
+
+                    # Else, merge the dataframes on the geography, current percentage, and rural
                     elif geography == "county":
                         main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible", "rural"],
                                            how="outer")
