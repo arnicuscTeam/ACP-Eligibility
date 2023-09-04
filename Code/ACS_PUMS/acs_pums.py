@@ -1125,15 +1125,22 @@ def cleanData(data_dir: str):
                         main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible", "rural"],
                                            how="outer")
 
-        # If the code column is county, make the rural column be the second column using the column name
+        # If the code column is county, make the rural column be the second column
         if geography == "county":
+
+            # Get the columns
             columns = main_df.columns.tolist()
+
+            # Remove the rural column
             columns.remove("rural")
-            print(columns)
+
+            # Add the rural column to the second position
             columns.insert(1, "rural")
-            print(columns)
+
+            # Reassign the columns
             main_df = main_df[columns]
 
+        # Save the data
         main_df.to_csv(test_folder + f"combined-{geography}.csv", index=False)
 
 
