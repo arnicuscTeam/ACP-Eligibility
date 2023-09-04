@@ -158,7 +158,7 @@ def crossWalkOldPumaNewPuma(all_eligibility_df: pd.DataFrame, crosswalk_file: st
     new_df["puma22"] = new_df["puma22"].str.zfill(7)
 
     # Calculate the percentage eligible
-    new_df["Percentage Eligible"] = new_df["Num Eligible"] / (new_df["Num Eligible"] + new_df["Num Ineligible"])
+    new_df["Percentage Eligible"] = new_df["Num Eligible"] / (new_df["Num Eligible"] + new_df["Num Ineligible"]) * 100
 
     # Round the percentage eligible to two decimal places
     new_df["Percentage Eligible"] = new_df["Percentage Eligible"].round(2)
@@ -436,7 +436,7 @@ def downloadPUMSFiles(data_directory: str):
     del response
 
 
-def determineEligibility(df_person: pd.DataFrame, df_household: pd.DataFrame, output_file: str, state_code: str):
+def create_state_sheet(df_person: pd.DataFrame, df_household: pd.DataFrame, output_file: str, state_code: str):
     """
 
     :param df_person: the person dataframe from the PUMS person zip file
@@ -628,16 +628,86 @@ def everyStateEligibility(data_directory: str):
                                     [person_df, pd.read_csv(zip_file.open(file), dtype={"PUMA": str})])
 
         # Call the function to determine eligibility
-        determineEligibility(person_df, household_df, end_file, state_code)
+        create_state_sheet(person_df, household_df, end_file, state_code)
 
     # Delete variables that are no longer needed
     del person_df
     del household_df
 
 
+def downloadCoveredPopFile():
+
+    """
+    This function will get the covered population data from the Census website. It does so by using the requests and
+    BeautifulSoup packages to parse the Census website and find the link to the file. It will store the data into a
+    dataframe and return it. This will be used to determine if a county is rural or not.
+    :return: A dataframe with the covered population data
+    """
+
+    # Website
+    website = "https://www.census.gov/programs-surveys/community-resilience-estimates/partnerships/ntia/digital-equity.html"
+
+    # Get the response from the website
+    response = requests.get(website)
+
+    # Parse the response
+    soup = BeautifulSoup(response.content, "html.parser")
+
+    # Search for all a tags
+    a_tags = soup.find_all("a")
+
+    # Initialize the new link
+    link = ""
+
+    # Iterate through all a tags
+    for tag in a_tags:
+        # If the text is "County and Census Tract Data," then get the link
+        if "County and Census Tract Data" in tag.text:
+            # Get the link
+            link = tag["href"]
+            break
+
+    # Download the file from the link
+    if link != "":
+        # Download the file
+        response = requests.get("https:" + link)
+
+        # Save the file to a variable
+        excel_data = BytesIO(response.content)
+
+        # Read the Excel file
+        # noinspection PyTypeChecker
+        df = pd.read_excel(excel_data, sheet_name="county_total_covered_population", skiprows=0)
+
+        # Drop all the columns that have MOE
+        df = df.loc[:, ~df.columns.str.contains("MOE")]
+
+        # Drop the geography_name column
+        df.drop(columns=["geography_name"], inplace=True)
+
+        # Turn the rural column into a 0 or 1
+        df["rural"] = df["rural"].replace({"Rural": "1", "Not rural": "0"})
+
+        # Drop the row if rural is null
+        df = df[df["rural"].notnull()]
+
+        # Turn geo_id into a string and zero fill it
+        df["geo_id"] = df["geo_id"].astype(str)
+        df["geo_id"] = df["geo_id"].str.zfill(11)
+        df["geo_id"] = df["geo_id"].str[:5]
+
+        # Return the dataframe
+        return df
+
+    # If there is no link
+    else:
+        print("No link found.")
+
+
 def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, has_ssip: int = 1, has_hins4: int = 1,
                           has_snap: int = 1, geography: str = "Public-use microdata area (PUMA)",
-                          aian: int = 0, asian: int = 0, black: int = 0, nhpi: int = 0, white: int = 0, hispanic: int = 0,
+                          aian: int = 0, asian: int = 0, black: int = 0, nhpi: int = 0, white: int = 0,
+                          hispanic: int = 0,
                           veteran: int = 0, elderly: int = 0, disability: int = 0):
     """
     This function will determine eligibility for ACP for all states. It does so by iterating through all the states and
@@ -790,7 +860,7 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
     main_df.sort_values(by=["puma22"], inplace=True)
 
     # Round the percentage eligible column to two decimal places
-    main_df["Percentage Eligible"] = main_df["Percentage Eligible"].round(2)
+    main_df["Percentage Eligible"] = (main_df["Percentage Eligible"] * 100).round(2)
 
     # PUMAs are seven digits, so add leading zeros
     main_df["puma22"] = main_df["puma22"].astype(str)
@@ -888,12 +958,15 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
                 if locals()[population_var] == 1:
                     main_df["difference_" + population_var] = main_df[population_name + " Eligible"] - main_df[
                         "Current " + population_name + " Eligible"]
-                    main_df["difference_percentage_" + population_var] = (main_df["difference_" + population_var] /
-                                                                          main_df["Current " + population_name +
-                                                                                  " Eligible"] * 100).round(2)
+                    main_df["difference_percentage_" + population_var] = ((main_df["difference_" + population_var] /
+                                                                           main_df["Current " + population_name +
+                                                                                   " Eligible"]) * 100).round(2)
+                    # Drop the columns that are no longer needed
                     main_df = main_df.drop(
-                        columns=[population_name + " Eligible", "Current " + population_name + " Eligible", "difference_" + population_var])
+                        columns=[population_name + " Eligible", "Current " + population_name + " Eligible",
+                                 "difference_" + population_var])
 
+            # Drop the columns that are no longer needed
             main_df = main_df.drop(columns=["Num Eligible", "Num Ineligible"])
 
             # Combine duplicate columns
@@ -920,7 +993,8 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
         new_df = crosswalkPUMAData(main_df, dc, "puma22", col_name)
 
         # Make the percentage eligible column
-        new_df["Percentage Eligible"] = new_df["Num Eligible"] / (new_df["Num Eligible"] + new_df["Num Ineligible"])
+        new_df["Percentage Eligible"] = new_df["Num Eligible"] / (
+                    new_df["Num Eligible"] + new_df["Num Ineligible"]) * 100
 
         # Round the percentage eligible column to two decimal places
         new_df["Percentage Eligible"] = new_df["Percentage Eligible"].round(2)
@@ -939,6 +1013,8 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
             original_df = original_df.rename(columns={"Num Eligible": "Current Num Eligible",
                                                       "Num Ineligible": "Current Num Ineligible",
                                                       "Percentage Eligible": "Current Percentage Eligible"})
+            if code_column == "county":
+                original_df = original_df.drop(columns=["rural"])
 
             # If covered populations are used, open that file and rename the columns
             if "covered_populations" in original_file:
@@ -987,6 +1063,25 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
             # Combine duplicate columns
             new_df = new_df.loc[:, ~new_df.columns.duplicated()]
 
+        # If the code column is county, then add the rural column
+        if code_column == "county":
+            # Download the covered population file
+            covered_pops_df = downloadCoveredPopFile()
+
+            # Rename the columns
+            covered_pops_df = covered_pops_df.rename(columns={"geo_id": "county"})
+
+            # Turn the county column into a string and zero fill it
+            covered_pops_df["county"] = covered_pops_df["county"].astype(str)
+            covered_pops_df["county"] = covered_pops_df["county"].str.zfill(5)
+
+            # Only keep county and rural columns
+            covered_pops_df = covered_pops_df[["county", "rural"]]
+
+            # Merge the dataframes
+            new_df = pd.merge(new_df, covered_pops_df, on="county", how="left")
+
+
         # Save the dataframe to a csv file
         new_df.to_csv(file_name, index=False)
 
@@ -994,7 +1089,6 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
 def cleanData(data_dir: str):
     pums_folder = data_dir + "ACS_PUMS/"
     test_folder = pums_folder + "Test_Data/"
-
 
     all_files = [f for f in os.listdir(test_folder) if os.path.isfile(os.path.join(test_folder, f))]
     geographies = [f.split(".")[0].split("-")[-1] for f in all_files if f.endswith(".csv")]
@@ -1014,6 +1108,8 @@ def cleanData(data_dir: str):
                         pass
                     elif "Current" in column:
                         pass
+                    elif "rural" in column:
+                        pass
                     else:
                         df = df.rename(columns={column: column + "_" + povpip})
                 columns = df.columns.tolist()
@@ -1023,11 +1119,22 @@ def cleanData(data_dir: str):
                 if main_df.empty:
                     main_df = df
                 else:
-                    main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible"], how="outer")
+                    if geography != "county":
+                        main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible"], how="outer")
+                    elif geography == "county":
+                        main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible", "rural"],
+                                           how="outer")
+
+        # If the code column is county, make the rural column be the second column using the column name
+        if geography == "county":
+            columns = main_df.columns.tolist()
+            columns.remove("rural")
+            print(columns)
+            columns.insert(1, "rural")
+            print(columns)
+            main_df = main_df[columns]
 
         main_df.to_csv(test_folder + f"combined-{geography}.csv", index=False)
-
-
 
 
 if __name__ == '__main__':
