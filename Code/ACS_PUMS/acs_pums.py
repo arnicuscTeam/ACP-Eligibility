@@ -735,8 +735,8 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
     # Path to relevant folders
     pums_folder = data_dir + "ACS_PUMS/"
     state_folder = pums_folder + "state_data/"
-    current_data = pums_folder + "Current_Data/"
-    test_data = pums_folder + "Test_Data/"
+    current_data = pums_folder + "Current_Eligibility/"
+    test_data = pums_folder + "Change_Eligibility/"
     geocorr_folder = data_dir + "GeoCorr/"
     puma_cw_folder = geocorr_folder + "Public-use microdata area (PUMA)/"
 
@@ -1097,7 +1097,7 @@ def cleanData(data_dir: str):
 
     # Path to relevant folders
     pums_folder = data_dir + "ACS_PUMS/"
-    test_folder = pums_folder + "Test_Data/"
+    test_folder = pums_folder + "Change_Eligibility/"
 
     # Get all the files in the test folder
     all_files = [f for f in os.listdir(test_folder) if os.path.isfile(os.path.join(test_folder, f))]
