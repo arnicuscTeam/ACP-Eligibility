@@ -636,7 +636,6 @@ def everyStateEligibility(data_directory: str):
 
 
 def downloadCoveredPopFile():
-
     """
     This function will get the covered population data from the Census website. It does so by using the requests and
     BeautifulSoup packages to parse the Census website and find the link to the file. It will store the data into a
@@ -994,7 +993,7 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
 
         # Make the percentage eligible column
         new_df["Percentage Eligible"] = new_df["Num Eligible"] / (
-                    new_df["Num Eligible"] + new_df["Num Ineligible"]) * 100
+                new_df["Num Eligible"] + new_df["Num Ineligible"]) * 100
 
         # Round the percentage eligible column to two decimal places
         new_df["Percentage Eligible"] = new_df["Percentage Eligible"].round(2)
@@ -1081,13 +1080,11 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
             # Merge the dataframes
             new_df = pd.merge(new_df, covered_pops_df, on="county", how="left")
 
-
         # Save the dataframe to a csv file
         new_df.to_csv(file_name, index=False)
 
 
 def cleanData(data_dir: str):
-
     """
     This function will clean the test data and combine it into one file. It does so by iterating through all the
     files in the test data folder and combining them into one file for each geography.
@@ -1175,10 +1172,8 @@ def cleanData(data_dir: str):
         # Reassign the columns
         main_df = main_df[columns]
 
-
         # If the code column is county, make the rural column be the second column
         if geography == "county":
-
             # Get the columns
             columns = main_df.columns.tolist()
 

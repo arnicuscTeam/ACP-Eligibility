@@ -13,7 +13,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 
 def getMostRecentGeoCorrApplication(data_directory: str, link_year: int = 0) -> str:
-
     """
     This function gets the link to the most recent GeoCorr Application using requests. It is useful when the user wants
     to download the crosswalk files for a specific year. If the user does not specify a year, the function will use the
@@ -58,18 +57,17 @@ def getMostRecentGeoCorrApplication(data_directory: str, link_year: int = 0) -> 
     return newest_link
 
 
-def downloadCrossWalkFile(weblink: str, data_directory: str, state_name: str, source_geography: str,
-                          target_geography: str) -> tuple[str, str]:
-
+def downloadCrossWalkFile(weblink: str, data_directory: str, source_geography: str,
+                          target_geography: str, state_name: str = "0") -> tuple[str, str]:
     """
     This function downloads the crosswalk file for the specified source and target geographies. It also cleans the
-    crosswalk file.
+    crosswalk file by calling the cleanCrossWalkFile function.
     :param weblink: The link to the GeoCorr Application
     :param data_directory: The path to the data directory
     :param state_name: The name of the state in case the user wants to download the crosswalk file for a specific state
     :param source_geography: The source geography
     :param target_geography: The target geography
-    :return:
+    :return: The path to the crosswalk file and the name of the source geography column
     """
 
     options = ["state", "county", "county subdivision (township, mcd)",
@@ -134,7 +132,6 @@ def downloadCrossWalkFile(weblink: str, data_directory: str, state_name: str, so
 
     # Select the state_name, source geography, and target geography
     selectable_options = driver.find_elements(By.TAG_NAME, "option")
-
 
     for option in selectable_options:
 
@@ -229,25 +226,21 @@ def downloadCrossWalkFile(weblink: str, data_directory: str, state_name: str, so
         source_col = "sduni"
 
     # Clean the crosswalk file
-    file_path = cleanCrossWalkFile(file_path, source_col)
+    file_path, source_col = cleanCrossWalkFile(file_path, source_col)
 
     return file_path, source_col
 
 
-# Clean the crosswalk file, parameter is the crosswalk file name, returns the file name
-def cleanCrossWalkFile(file_name: str, source_col: str) -> str:
-
+def cleanCrossWalkFile(file_name: str, source_col: str) -> tuple[str, str]:
     """
     This function cleans the crosswalk file. This is necessary because the crosswalk files have an extra row at the top
     :param file_name: The name of the crosswalk file
     :param source_col: The name of the source geography column
-    :return:
+    :return: The name of the crosswalk file and the name of the source geography column
     """
 
-    df = pd.read_csv(file_name, encoding="ISO-8859-1", dtype=str)
+    df = pd.read_csv(file_name, encoding="ISO-8859-1", dtype=str, skiprows=[0])
 
-    # remove the first row
-    df = df.iloc[1:]
     columns = df.columns.tolist()
 
     for column in columns:
@@ -255,161 +248,68 @@ def cleanCrossWalkFile(file_name: str, source_col: str) -> str:
             source_col = column
             break
 
-    # Always do this
-    try:
-        # zcta column is a string
-        df["zcta"] = df["zcta"].astype(str)
+    # Standardize 'zcta' column
+    if 'zcta' in df:
+        df['zcta'] = df['zcta'].astype(str).str.zfill(5)
 
-        # zcta column is five characters long
-        df["zcta"] = df["zcta"].str.zfill(5)
-    except:
-        pass
+    # Standardize 'state' column
+    if 'state' in df:
+        df['state'] = df['state'].astype(str).str.zfill(2)
 
-    # Also always do this
-    try:
-        df["state"] = df["state"].astype(str)
-        df["state"] = df["state"].str.zfill(2)
-    except:
-        pass
+    # Standardize 'puma' column
+    if 'puma' in source_col:
+        df[source_col] = df[source_col].astype(str).str.zfill(5)
+        df[source_col] = df['state'] + df[source_col]
 
-    # Make the puma column 7 characters long
-    if "puma" in source_col:
-        df[source_col] = df[source_col].astype(str)
-        df[source_col] = df[source_col].str.zfill(5)
-        df[source_col] = df["state"] + df[source_col]
+    # Standardize 'sduni20' column (Unified School District)
+    if 'sduni20' in df:
+        df['sduni20'] = df['sduni20'].astype(str).str.zfill(5)
+        df['state'] = df['state'].astype(str).str.zfill(2)
+        df['sduni20'] = df['state'] + df['sduni20']
+        df = df.drop(columns=['state'])
 
+    # Standardize 'metdiv20' column (Metropolitan Division)
+    if 'metdiv20' in df:
+        df['metdiv20'] = df['metdiv20'].astype(str).str.zfill(5)
+        df = df[df['metdiv20'] != '99999']
 
-    # If target is Unified School District
-    try:
-        # sduni20 column is a string
-        df["sduni20"] = df["sduni20"].astype(str)
+    # Standardize 'county' column
+    if 'county' in df:
+        df['county'] = df['county'].astype(str).str.zfill(5)
 
-        # sduni20 column is five characters long
-        df["sduni20"] = df["sduni20"].str.zfill(5)
-
-        # State column is a string
-        df["state"] = df["state"].astype(str)
-
-        # State column is two characters long
-        df["state"] = df["state"].str.zfill(2)
-
-        # Combine the state and sduni20 columns
-        df["sduni20"] = df["state"] + df["sduni20"]
-
-        # Drop the state column
-        df = df.drop(columns=["state"])
-    except:
-        pass
-
-    # If target is metropolitan division
-    try:
-        # metdiv20 column is a string
-        df["metdiv20"] = df["metdiv20"].astype(str)
-
-        # metdiv20 column is five characters long
-        df["metdiv20"] = df["metdiv20"].str.zfill(5)
-
-        df = df.drop(columns=["state"])
-    except:
-        pass
-
-    # If target is census tract
-    try:
-        # Tract column is a string
-        df["tract"] = df["tract"].astype(str)
-
-        # Remove the decimal
-        df["tract"] = df["tract"].str.replace(".", "", regex=False)
-
-        # Tract column is six characters long
-        df["tract"] = df["tract"].str.pad(width=6, side='right', fillchar='0')
-
-        # County column is a string
-        df["county"] = df["county"].astype(str)
-
-        # County column is five characters long
-        df["county"] = df["county"].str.zfill(5)
-
-        # Combine the county and tract columns
-        df["tract"] = df["county"] + df["tract"]
-
-        # Drop the county column
-        df = df.drop(columns=["county"])
-
-        # Rename the tract column if we are using 2018 geocorr
-        if "2018" in file_name:
+    # Standardize 'tract' column (Census Tract)
+    if 'tract' in df:
+        df['tract'] = df['tract'].astype(str).str.replace(".", "", regex=False)
+        df['tract'] = df['tract'].str.pad(width=6, side='right', fillchar='0')
+        df['county'] = df['county'].astype(str).str.zfill(5)
+        df['tract'] = df['county'] + df['tract']
+        df = df.drop(columns=['county'])
+        if '2018' in file_name:
             df = df.rename(columns={"tract": "tract10"})
-    except:
-        pass
 
-    # If target is county
-    try:
-        # County column is a string
-        df["county"] = df["county"].astype(str)
+    # Standardize 'cd118' column (118th Congress)
+    if 'cd118' in df:
+        df['cd118'] = df['cd118'].astype(str).str.zfill(2)
+        df['state'] = df['state'].astype(str).str.zfill(2)
+        df['cd118'] = df['state'] + df['cd118']
+        df = df.drop(columns=['state'])
 
-        # County column is five characters long
-        df["county"] = df["county"].str.zfill(5)
-    except:
-        pass
-
-    # If target is 118th Congress (2023-2024)
-    try:
-        # cd118 column is a string
-        df["cd118"] = df["cd118"].astype(str)
-
-        # cd118 column is two characters long
-        df["cd118"] = df["cd118"].str.zfill(2)
-
-        # State column is a string
-        df["state"] = df["state"].astype(str)
-
-        # State column is two characters long
-        df["state"] = df["state"].str.zfill(2)
-
-        # Combine the state and cd118 columns
-        df["cd118"] = df["state"] + df["cd118"]
-
-        # Drop the state column
-        df = df.drop(columns=["state"])
-    except:
-        pass
-
-    # If target is public-use microdata area (PUMA)
-    try:
-        if "puma" not in source_col:
-            # puma22 column is a string
-            df["puma22"] = df["puma22"].astype(str)
-
-            # puma22 column is five characters long
-            df["puma22"] = df["puma22"].str.zfill(5)
-
-            # State column is a string
-            df["state"] = df["state"].astype(str)
-
-            # State column is two characters long
-            df["state"] = df["state"].str.zfill(2)
-
-            # Combine the state and puma22 columns
-            df["puma22"] = df["state"] + df["puma22"]
-
-            # Make the puma22 column 7 characters long
-            df["puma22"] = df["puma22"].str.zfill(7)
+    # Standardize 'puma22' column (Public-Use Microdata Area)
+    if 'puma22' in df:
+        df['puma22'] = df['puma22'].astype(str).str.zfill(5)
+        df['state'] = df['state'].astype(str).str.zfill(2)
+        df['puma22'] = df['state'] + df['puma22']
 
         # Drop the state column if it is not the source or target geography
         temp_name = file_name.split("States")[1]
 
         if "State" not in temp_name:
             df = df.drop(columns=["state"])
-    except:
-        pass
-    finally:
-        # Drop the rows that have 00000 as the zip code
-        df = df[df[source_col] != "00000"]
 
-        # Save the file
-        df.to_csv(file_name, index=False)
+    # Drop rows with '00000' in the source column (e.g., zip code)
+    df = df[df[source_col] != "00000"]
 
-        # Delete the df to free up memory
-        del df
+    # Save the cleaned file
+    df.to_csv(file_name, index=False)
 
-    return file_name
+    return file_name, source_col
