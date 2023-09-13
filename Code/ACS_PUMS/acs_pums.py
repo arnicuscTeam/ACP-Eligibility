@@ -1084,6 +1084,53 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
         new_df.to_csv(file_name, index=False)
 
 
+def add_participation_rate_combined(data_dir: str):
+    pums_folder = data_dir + "ACS_PUMS/"
+    change_data = pums_folder + "Change_Eligibility/"
+    acp_data = data_dir + "ACP_Households/"
+    total_acp_folder = acp_data + "Final_Files/"
+
+    combined_files = [f for f in os.listdir(change_data) if f.endswith(".csv") and "combined" in f]
+
+    for file in combined_files:
+        geography = file.split("-")[-1].split(".")[0]
+
+        pums_df = pd.read_csv(os.path.join(change_data, file), header=0, dtype={geography: str})
+
+        pums_df["Total Subscribers"] = 0
+
+        # Look for the total acp file with the same geography
+        total_acp_file = [f for f in os.listdir(total_acp_folder) if f.endswith(".csv") and geography in f]
+
+        # If the file exists, then add the participation rate
+        if len(total_acp_file) > 0:
+            acp_df = pd.read_csv(os.path.join(total_acp_folder, total_acp_file[0]), header=0, dtype={geography: str})
+
+            # Find unique values for the geography
+            unique_geography = acp_df[geography].unique()
+
+            # Iterate through all the unique values
+            for area in unique_geography:
+                area_df = acp_df.loc[acp_df[geography] == area].copy()
+
+                # Sort them ascending by Data Month
+                area_df.sort_values(by=["Data Month"], inplace=True)
+
+                # Find the most recent month
+                most_recent_month = area_df["Data Month"].iloc[-1]
+
+                # Find the Total Subscribers column for the most recent month
+                total_subscribers = area_df.loc[area_df["Data Month"] == most_recent_month, "Total Subscribers"].iloc[0]
+
+                # Add the total subscribers to the pums dataframe
+                pums_df.loc[pums_df[geography] == area, "Total Subscribers"] = total_subscribers
+
+
+
+
+
+
+
 def cleanData(data_dir: str):
     """
     This function will clean the test data and combine it into one file. It does so by iterating through all the
@@ -1190,5 +1237,11 @@ def cleanData(data_dir: str):
         main_df.to_csv(test_folder + f"combined-{geography}.csv", index=False)
 
 
+
+
+
+
+
 if __name__ == '__main__':
-    cleanData("../../Data/")
+    # cleanData("../../Data/")
+    add_participation_rate_combined("../../Data/")
