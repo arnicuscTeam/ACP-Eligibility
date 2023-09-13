@@ -15,6 +15,7 @@ def main():
     metro = "Metropolitan division"
     zcta = "ZIP/ZCTA"
     state = "State"
+    puma = "Public-use microdata area (PUMA)"
     #
     # Download the crosswalk files
     link = getMostRecentGeoCorrApplication(data_dir)
@@ -100,10 +101,12 @@ def main():
     #                       veteran=1,
     #                       disability=1, elderly=1)
 
+    # Download zcta crosswalk files
     downloadCrossWalkFile(link, data_dir, zcta, county)
     downloadCrossWalkFile(link, data_dir, zcta, congressional_district)
     downloadCrossWalkFile(link, data_dir, zcta, metro)
     downloadCrossWalkFile(link, data_dir, zcta, state)
+    downloadCrossWalkFile(link, data_dir, zcta, puma)
 
 
 
