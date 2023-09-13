@@ -936,9 +936,6 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
                     else:
                         original_df = original_df.drop(columns=[population_name + " Eligible"])
 
-            # Drop the columns that are no longer needed
-            original_df.drop(columns=["Current Num Eligible", "Current Num Ineligible"], inplace=True)
-
             # Round the percentage eligible column to two decimal places
             main_df["Percentage Eligible"] = main_df["Percentage Eligible"].round(2)
             original_df["Current Percentage Eligible"] = original_df["Current Percentage Eligible"].round(2)
@@ -1025,8 +1022,6 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
                     else:
                         original_df = original_df.drop(columns=[population_name + " Eligible"])
 
-            # Drop the columns that are no longer needed
-            original_df.drop(columns=["Current Num Eligible", "Current Num Ineligible"], inplace=True)
 
             # Round the percentage eligible column to two decimal places
             new_df["Percentage Eligible"] = new_df["Percentage Eligible"].round(2)
@@ -1125,6 +1120,9 @@ def add_participation_rate_combined(data_dir: str):
                 # Add the total subscribers to the pums dataframe
                 pums_df.loc[pums_df[geography] == area, "Total Subscribers"] = total_subscribers
 
+        # Save the data
+        pums_df.to_csv(os.path.join(change_data, file), index=False)
+
 
 
 
@@ -1200,11 +1198,14 @@ def cleanData(data_dir: str):
                 else:
                     # If the geography is not county, then merge the dataframes on the geography and current percentage
                     if geography != "county":
-                        main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible"], how="outer")
+                        main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible",
+                                                            "Current Num Eligible", "Current Num Ineligible"],
+                                           how="outer")
 
                     # Else, merge the dataframes on the geography, current percentage, and rural
                     elif geography == "county":
-                        main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible", "rural"],
+                        main_df = pd.merge(main_df, df, on=[geography, "Current Percentage Eligible", "rural",
+                                                            "Current Num Eligible", "Current Num Ineligible"],
                                            how="outer")
 
         # Move the current percentage eligible column to the second position
@@ -1215,6 +1216,18 @@ def cleanData(data_dir: str):
 
         # Add the current percentage eligible column to the second position
         columns.insert(1, "Current Percentage Eligible")
+
+        # Remove the current percentage eligible column
+        columns.remove("Current Num Ineligible")
+
+        # Add the current percentage eligible column to the second position
+        columns.insert(1, "Current Num Ineligible")
+
+        # Remove the current percentage eligible column
+        columns.remove("Current Num Eligible")
+
+        # Add the current percentage eligible column to the second position
+        columns.insert(1, "Current Num Eligible")
 
         # Reassign the columns
         main_df = main_df[columns]
@@ -1237,11 +1250,6 @@ def cleanData(data_dir: str):
         main_df.to_csv(test_folder + f"combined-{geography}.csv", index=False)
 
 
-
-
-
-
-
 if __name__ == '__main__':
-    # cleanData("../../Data/")
+    cleanData("../../Data/")
     add_participation_rate_combined("../../Data/")

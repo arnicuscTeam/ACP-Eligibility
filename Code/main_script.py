@@ -110,10 +110,10 @@ def main():
     # downloadCrossWalkFile(link, data_dir, zcta, puma)
 
     # ZCTAtoTargetGeography(data_dir, county)
-    ZCTAtoTargetGeography(data_dir, congressional_district)
-    ZCTAtoTargetGeography(data_dir, metro)
-    ZCTAtoTargetGeography(data_dir, state)
-    ZCTAtoTargetGeography(data_dir, puma)
+    # ZCTAtoTargetGeography(data_dir, congressional_district)
+    # ZCTAtoTargetGeography(data_dir, metro)
+    # ZCTAtoTargetGeography(data_dir, state)
+    # ZCTAtoTargetGeography(data_dir, puma)
 
 
 if __name__ == '__main__':
