@@ -248,6 +248,8 @@ def crosswalkUSACData(data_directory: str, code_dict: dict[str, list[tuple[str, 
                                'Total Verified by School', 'Total Lifeline',
                                'Total National Verifier Application', 'Total Subscribers'])
 
+    print(df.head())
+
     # Aggregate the data if there are multiple rows with the same puma22 code and data month
     df = df.groupby(['Data Month', code_col]).sum()
 
@@ -347,6 +349,7 @@ def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str 
     final_folder = os.path.join(data_directory, "ACP_Households", "Final_Files")
     final_zip_file = os.path.join(final_folder, "Total-ACP-Households-by-zcta.csv")
     df = pd.read_csv(final_zip_file)
+    print(df.head())
 
     geocorr_folder = os.path.join(data_directory, "Geocorr")
     zcta_cw_folder = os.path.join(geocorr_folder, "ZIP_ZCTA")
@@ -364,7 +367,9 @@ def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str 
         cw_file = os.path.join(zcta_cw_folder, "United_States_Zip-Zcta_to_118Th-Congress-(2023-2024).csv")
 
     dc, col_name = code_to_source_dict(cw_file, source_col)
+    print(dc)
     zip_data = organizeDataByZip(df)
+    print(zip_data)
 
     crosswalkUSACData(data_directory, dc, zip_data, col_name)
 
