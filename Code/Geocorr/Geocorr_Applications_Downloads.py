@@ -239,7 +239,7 @@ def cleanCrossWalkFile(file_name: str, source_col: str) -> tuple[str, str]:
     :return: The name of the crosswalk file and the name of the source geography column
     """
 
-    df = pd.read_csv(file_name, encoding="ISO-8859-1", dtype=str, skiprows=[0])
+    df = pd.read_csv(file_name, encoding="ISO-8859-1", dtype=str, skiprows=[1])
 
     columns = df.columns.tolist()
 
@@ -258,6 +258,7 @@ def cleanCrossWalkFile(file_name: str, source_col: str) -> tuple[str, str]:
 
     # Standardize 'puma' column
     if 'puma' in source_col:
+        print(source_col)
         df[source_col] = df[source_col].astype(str).str.zfill(5)
         df[source_col] = df['state'] + df[source_col]
 

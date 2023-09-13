@@ -1,338 +1,338 @@
-ZIP census tabulation area,County code,County name,ZIP Code name,Total population (2020 Census),zcta-to-county allocation factor
- ,01029,Cleburne AL,[not in a ZCTA],5,0.0006 
- ,02013,Aleutians East Borough AK,[not in a ZCTA],10,0.0012 
- ,02016,Aleutians West Census Area AK,[not in a ZCTA],235,0.0274 
- ,02050,Bethel Census Area AK,[not in a ZCTA],126,0.0147 
- ,02063,02063,[not in a ZCTA],21,0.0025 
- ,02066,02066,[not in a ZCTA],3,0.0004 
- ,02068,Denali Borough AK,[not in a ZCTA],6,0.0007 
- ,02070,Dillingham Census Area AK,[not in a ZCTA],1,0.0001 
- ,02090,Fairbanks North Star Borough AK,[not in a ZCTA],33,0.0039 
- ,02105,Hoonah-Angoon Census Area,[not in a ZCTA],47,0.0055 
- ,02110,Juneau Borough AK,[not in a ZCTA],56,0.0065 
- ,02122,Kenai Peninsula Borough AK,[not in a ZCTA],21,0.0025 
- ,02130,Ketchikan Gateway Borough AK,[not in a ZCTA],6,0.0007 
- ,02150,Kodiak Island Borough AK,[not in a ZCTA],33,0.0039 
- ,02158,Kusilvak Census Area (N),[not in a ZCTA],117,0.0137 
- ,02164,Lake and Peninsula Borough AK,[not in a ZCTA],24,0.0028 
- ,02170,Matanuska-Susitna Borough AK,[not in a ZCTA],24,0.0028 
- ,02180,Nome Census Area AK,[not in a ZCTA],32,0.0037 
- ,02185,North Slope Borough AK,[not in a ZCTA],245,0.0286 
- ,02188,Northwest Arctic Borough AK,[not in a ZCTA],81,0.0095 
- ,02195,Petersburg Census Area,[not in a ZCTA],6,0.0007 
- ,02198,Prince of Wales-Hyder Census Area,[not in a ZCTA],20,0.0023 
- ,02220,Sitka Borough AK,[not in a ZCTA],12,0.0014 
- ,02240,Southeast Fairbanks Census Area AK,[not in a ZCTA],10,0.0012 
- ,02282,Yakutat Borough,[not in a ZCTA],5,0.0006 
- ,02290,Yukon-Koyukuk Census Area AK,[not in a ZCTA],60,0.007 
- ,04001,Apache AZ,[not in a ZCTA],251,0.0293 
- ,04005,Coconino AZ,[not in a ZCTA],114,0.0133 
- ,04007,Gila AZ,[not in a ZCTA],13,0.0015 
- ,04009,Graham AZ,[not in a ZCTA],26,0.003 
- ,04013,Maricopa AZ,[not in a ZCTA],40,0.0047 
- ,04015,Mohave AZ,[not in a ZCTA],27,0.0032 
- ,04017,Navajo AZ,[not in a ZCTA],111,0.013 
- ,04021,Pinal AZ,[not in a ZCTA],51,0.006 
- ,04025,Yavapai AZ,[not in a ZCTA],17,0.002 
- ,04027,Yuma AZ,[not in a ZCTA],1,0.0001 
- ,05051,Garland AR,[not in a ZCTA],3,0.0004 
- ,05061,Howard AR,[not in a ZCTA],1,0.0001 
- ,05093,Mississippi AR,[not in a ZCTA],3,0.0004 
- ,05105,Perry AR,[not in a ZCTA],2,0.0002 
- ,05113,Polk AR,[not in a ZCTA],6,0.0007 
- ,05119,Pulaski AR,[not in a ZCTA],18,0.0021 
- ,05131,Sebastian AR,[not in a ZCTA],8,0.0009 
- ,05133,Sevier AR,[not in a ZCTA],2,0.0002 
- ,05149,Yell AR,[not in a ZCTA],3,0.0004 
- ,06003,Alpine CA,[not in a ZCTA],3,0.0004 
- ,06007,Butte CA,[not in a ZCTA],16,0.0019 
- ,06013,Contra Costa CA,[not in a ZCTA],3,0.0004 
- ,06015,Del Norte CA,[not in a ZCTA],11,0.0013 
- ,06017,El Dorado CA,[not in a ZCTA],17,0.002 
- ,06019,Fresno CA,[not in a ZCTA],51,0.006 
- ,06021,Glenn CA,[not in a ZCTA],1,0.0001 
- ,06023,Humboldt CA,[not in a ZCTA],23,0.0027 
- ,06027,Inyo CA,[not in a ZCTA],59,0.0069 
- ,06029,Kern CA,[not in a ZCTA],143,0.0167 
- ,06031,Kings CA,[not in a ZCTA],3,0.0004 
- ,06035,Lassen CA,[not in a ZCTA],19,0.0022 
- ,06037,Los Angeles CA,[not in a ZCTA],170,0.0198 
- ,06039,Madera CA,[not in a ZCTA],5,0.0006 
- ,06045,Mendocino CA,[not in a ZCTA],31,0.0036 
- ,06047,Merced CA,[not in a ZCTA],33,0.0039 
- ,06049,Modoc CA,[not in a ZCTA],17,0.002 
- ,06051,Mono CA,[not in a ZCTA],39,0.0046 
- ,06053,Monterey CA,[not in a ZCTA],22,0.0026 
- ,06057,Nevada CA,[not in a ZCTA],29,0.0034 
- ,06061,Placer CA,[not in a ZCTA],11,0.0013 
- ,06063,Plumas CA,[not in a ZCTA],81,0.0095 
- ,06065,Riverside CA,[not in a ZCTA],14,0.0016 
- ,06069,San Benito CA,[not in a ZCTA],22,0.0026 
- ,06071,San Bernardino CA,[not in a ZCTA],62,0.0072 
- ,06073,San Diego CA,[not in a ZCTA],135,0.0158 
- ,06075,San Francisco CA,[not in a ZCTA],32,0.0037 
- ,06079,San Luis Obispo CA,[not in a ZCTA],10,0.0012 
- ,06081,San Mateo CA,[not in a ZCTA],30,0.0035 
- ,06083,Santa Barbara CA,[not in a ZCTA],29,0.0034 
- ,06085,Santa Clara CA,[not in a ZCTA],42,0.0049 
- ,06089,Shasta CA,[not in a ZCTA],21,0.0025 
- ,06091,Sierra CA,[not in a ZCTA],35,0.0041 
- ,06093,Siskiyou CA,[not in a ZCTA],6,0.0007 
- ,06103,Tehama CA,[not in a ZCTA],12,0.0014 
- ,06105,Trinity CA,[not in a ZCTA],175,0.0204 
- ,06107,Tulare CA,[not in a ZCTA],18,0.0021 
- ,06109,Tuolumne CA,[not in a ZCTA],41,0.0048 
- ,06111,Ventura CA,[not in a ZCTA],10,0.0012 
- ,12021,Collier FL,[not in a ZCTA],15,0.0018 
- ,12029,Dixie FL,[not in a ZCTA],7,0.0008 
- ,12033,Escambia FL,[not in a ZCTA],2,0.0002 
- ,12037,Franklin FL,[not in a ZCTA],6,0.0007 
- ,12067,Lafayette FL,[not in a ZCTA],12,0.0014 
- ,12075,Levy FL,[not in a ZCTA],7,0.0008 
- ,12087,Monroe FL,[not in a ZCTA],25,0.0029 
- ,12113,Santa Rosa FL,[not in a ZCTA],5,0.0006 
- ,12123,Taylor FL,[not in a ZCTA],5,0.0006 
- ,13039,Camden GA,[not in a ZCTA],11,0.0013 
- ,13065,Clinch GA,[not in a ZCTA],6,0.0007 
- ,15001,Hawaii HI,[not in a ZCTA],32,0.0037 
- ,15007,Kauai HI,[not in a ZCTA],121,0.0141 
- ,16003,Adams ID,[not in a ZCTA],4,0.0005 
- ,16011,Bingham ID,[not in a ZCTA],43,0.005 
- ,16025,Camas ID,[not in a ZCTA],3,0.0004 
- ,16029,Caribou ID,[not in a ZCTA],8,0.0009 
- ,16031,Cassia ID,[not in a ZCTA],8,0.0009 
- ,16033,Clark ID,[not in a ZCTA],15,0.0018 
- ,16035,Clearwater ID,[not in a ZCTA],21,0.0025 
- ,16039,Elmore ID,[not in a ZCTA],2,0.0002 
- ,16047,Gooding ID,[not in a ZCTA],8,0.0009 
- ,16049,Idaho ID,[not in a ZCTA],30,0.0035 
- ,16051,Jefferson ID,[not in a ZCTA],9,0.0011 
- ,16065,Madison ID,[not in a ZCTA],3,0.0004 
- ,16073,Owyhee ID,[not in a ZCTA],20,0.0023 
- ,16079,Shoshone ID,[not in a ZCTA],5,0.0006 
- ,16083,Twin Falls ID,[not in a ZCTA],11,0.0013 
- ,16085,Valley ID,[not in a ZCTA],15,0.0018 
- ,19005,Allamakee IA,[not in a ZCTA],2,0.0002 
- ,20161,Riley KS,[not in a ZCTA],1,0.0001 
- ,21163,Meade KY,[not in a ZCTA],7,0.0008 
- ,22045,Iberia Parish LA,[not in a ZCTA],7,0.0008 
- ,22047,Iberville Parish LA,[not in a ZCTA],10,0.0012 
- ,22051,Jefferson Parish LA,[not in a ZCTA],6,0.0007 
- ,22075,Plaquemines Parish LA,[not in a ZCTA],9,0.0011 
- ,22089,St. Charles Parish LA,[not in a ZCTA],5,0.0006 
- ,22093,St. James Parish LA,[not in a ZCTA],6,0.0007 
- ,22095,St. John the Baptist Parish LA,[not in a ZCTA],3,0.0004 
- ,22099,St. Martin Parish LA,[not in a ZCTA],44,0.0051 
- ,22103,St. Tammany Parish LA,[not in a ZCTA],19,0.0022 
- ,22109,Terrebonne Parish LA,[not in a ZCTA],8,0.0009 
- ,22113,Vermilion Parish LA,[not in a ZCTA],17,0.002 
- ,22125,West Feliciana Parish LA,[not in a ZCTA],1,0.0001 
- ,23003,Aroostook ME,[not in a ZCTA],12,0.0014 
- ,23009,Hancock ME,[not in a ZCTA],3,0.0004 
- ,23015,Lincoln ME,[not in a ZCTA],3,0.0004 
- ,23021,Piscataquis ME,[not in a ZCTA],8,0.0009 
- ,23025,Somerset ME,[not in a ZCTA],3,0.0004 
- ,23029,Washington ME,[not in a ZCTA],23,0.0027 
- ,25001,Barnstable MA,[not in a ZCTA],1,0.0001 
- ,25023,Plymouth MA,[not in a ZCTA],12,0.0014 
- ,26079,Kalkaska MI,[not in a ZCTA],4,0.0005 
- ,26089,Leelanau MI,[not in a ZCTA],3,0.0004 
- ,26113,Missaukee MI,[not in a ZCTA],2,0.0002 
- ,26135,Oscoda MI,[not in a ZCTA],2,0.0002 
- ,26143,Roscommon MI,[not in a ZCTA],3,0.0004 
- ,27007,Beltrami MN,[not in a ZCTA],12,0.0014 
- ,27077,Lake of the Woods MN,[not in a ZCTA],2,0.0002 
- ,28027,Coahoma MS,[not in a ZCTA],1,0.0001 
- ,28045,Hancock MS,[not in a ZCTA],45,0.0053 
- ,30003,Big Horn MT,[not in a ZCTA],17,0.002 
- ,30005,Blaine MT,[not in a ZCTA],4,0.0005 
- ,30029,Flathead MT,[not in a ZCTA],4,0.0005 
- ,32001,Churchill NV,[not in a ZCTA],2,0.0002 
- ,32003,Clark NV,[not in a ZCTA],12,0.0014 
- ,32007,Elko NV,[not in a ZCTA],353,0.0412 
- ,32009,Esmeralda NV,[not in a ZCTA],6,0.0007 
- ,32011,Eureka NV,[not in a ZCTA],31,0.0036 
- ,32013,Humboldt NV,[not in a ZCTA],37,0.0043 
- ,32015,Lander NV,[not in a ZCTA],13,0.0015 
- ,32017,Lincoln NV,[not in a ZCTA],6,0.0007 
- ,32021,Mineral NV,[not in a ZCTA],23,0.0027 
- ,32023,Nye NV,[not in a ZCTA],105,0.0123 
- ,32027,Pershing NV,[not in a ZCTA],39,0.0046 
- ,32033,White Pine NV,[not in a ZCTA],152,0.0177 
- ,35003,Catron NM,[not in a ZCTA],62,0.0072 
- ,35006,Cibola NM,[not in a ZCTA],77,0.009 
- ,35007,Colfax NM,[not in a ZCTA],10,0.0012 
- ,35013,Dona Ana NM,[not in a ZCTA],8,0.0009 
- ,35031,McKinley NM,[not in a ZCTA],133,0.0155 
- ,35033,Mora NM,[not in a ZCTA],13,0.0015 
- ,35035,Otero NM,[not in a ZCTA],4,0.0005 
- ,35039,Rio Arriba NM,[not in a ZCTA],47,0.0055 
- ,35043,Sandoval NM,[not in a ZCTA],15,0.0018 
- ,35045,San Juan NM,[not in a ZCTA],148,0.0173 
- ,35047,San Miguel NM,[not in a ZCTA],5,0.0006 
- ,35051,Sierra NM,[not in a ZCTA],5,0.0006 
- ,35053,Socorro NM,[not in a ZCTA],40,0.0047 
- ,35055,Taos NM,[not in a ZCTA],36,0.0042 
- ,35061,Valencia NM,[not in a ZCTA],1,0.0001 
- ,36005,Bronx NY,[not in a ZCTA],4,0.0005 
- ,36027,Dutchess NY,[not in a ZCTA],4,0.0005 
- ,36033,Franklin NY,[not in a ZCTA],5,0.0006 
- ,36045,Jefferson NY,[not in a ZCTA],3,0.0004 
- ,36061,New York NY,[not in a ZCTA],112,0.0131 
- ,36075,Oswego NY,[not in a ZCTA],4,0.0005 
- ,36081,Queens NY,[not in a ZCTA],23,0.0027 
- ,36103,Suffolk NY,[not in a ZCTA],13,0.0015 
- ,36111,Ulster NY,[not in a ZCTA],9,0.0011 
- ,36119,Westchester NY,[not in a ZCTA],54,0.0063 
- ,36123,Yates NY,[not in a ZCTA],1,0.0001 
- ,39123,Ottawa OH,[not in a ZCTA],7,0.0008 
- ,40031,Comanche OK,[not in a ZCTA],6,0.0007 
- ,40089,McCurtain OK,[not in a ZCTA],47,0.0055 
- ,40121,Pittsburg OK,[not in a ZCTA],5,0.0006 
- ,40127,Pushmataha OK,[not in a ZCTA],1,0.0001 
- ,41001,Baker OR,[not in a ZCTA],4,0.0005 
- ,41009,Columbia OR,[not in a ZCTA],2,0.0002 
- ,41013,Crook OR,[not in a ZCTA],13,0.0015 
- ,41017,Deschutes OR,[not in a ZCTA],45,0.0053 
- ,41019,Douglas OR,[not in a ZCTA],12,0.0014 
- ,41023,Grant OR,[not in a ZCTA],1,0.0001 
- ,41025,Harney OR,[not in a ZCTA],7,0.0008 
- ,41029,Jackson OR,[not in a ZCTA],36,0.0042 
- ,41031,Jefferson OR,[not in a ZCTA],14,0.0016 
- ,41035,Klamath OR,[not in a ZCTA],61,0.0071 
- ,41037,Lake OR,[not in a ZCTA],34,0.004 
- ,41039,Lane OR,[not in a ZCTA],20,0.0023 
- ,41043,Linn OR,[not in a ZCTA],4,0.0005 
- ,41045,Malheur OR,[not in a ZCTA],5,0.0006 
- ,41057,Tillamook OR,[not in a ZCTA],7,0.0008 
- ,41059,Umatilla OR,[not in a ZCTA],24,0.0028 
- ,41061,Union OR,[not in a ZCTA],4,0.0005 
- ,41063,Wallowa OR,[not in a ZCTA],3,0.0004 
- ,41065,Wasco OR,[not in a ZCTA],7,0.0008 
- ,41069,Wheeler OR,[not in a ZCTA],1,0.0001 
- ,44005,Newport RI,[not in a ZCTA],1,0.0001 
- ,48003,Andrews TX,[not in a ZCTA],22,0.0026 
- ,48007,Aransas TX,[not in a ZCTA],13,0.0015 
- ,48033,Borden TX,[not in a ZCTA],1,0.0001 
- ,48043,Brewster TX,[not in a ZCTA],147,0.0172 
- ,48045,Briscoe TX,[not in a ZCTA],1,0.0001 
- ,48047,Brooks TX,[not in a ZCTA],6,0.0007 
- ,48059,Callahan TX,[not in a ZCTA],3,0.0004 
- ,48065,Carson TX,[not in a ZCTA],8,0.0009 
- ,48071,Chambers TX,[not in a ZCTA],12,0.0014 
- ,48079,Cochran TX,[not in a ZCTA],2,0.0002 
- ,48081,Coke TX,[not in a ZCTA],10,0.0012 
- ,48087,Collingsworth TX,[not in a ZCTA],16,0.0019 
- ,48099,Coryell TX,[not in a ZCTA],4,0.0005 
- ,48101,Cottle TX,[not in a ZCTA],3,0.0004 
- ,48107,Crosby TX,[not in a ZCTA],6,0.0007 
- ,48109,Culberson TX,[not in a ZCTA],85,0.0099 
- ,48117,Deaf Smith TX,[not in a ZCTA],4,0.0005 
- ,48127,Dimmit TX,[not in a ZCTA],41,0.0048 
- ,48131,Duval TX,[not in a ZCTA],6,0.0007 
- ,48135,Ector TX,[not in a ZCTA],8,0.0009 
- ,48167,Galveston TX,[not in a ZCTA],1,0.0001 
- ,48173,Glasscock TX,[not in a ZCTA],11,0.0013 
- ,48179,Gray TX,[not in a ZCTA],9,0.0011 
- ,48189,Hale TX,[not in a ZCTA],3,0.0004 
- ,48191,Hall TX,[not in a ZCTA],4,0.0005 
- ,48205,Hartley TX,[not in a ZCTA],2,0.0002 
- ,48207,Haskell TX,[not in a ZCTA],8,0.0009 
- ,48215,Hidalgo TX,[not in a ZCTA],1,0.0001 
- ,48227,Howard TX,[not in a ZCTA],6,0.0007 
- ,48229,Hudspeth TX,[not in a ZCTA],43,0.005 
- ,48233,Hutchinson TX,[not in a ZCTA],31,0.0036 
- ,48235,Irion TX,[not in a ZCTA],22,0.0026 
- ,48243,Jeff Davis TX,[not in a ZCTA],40,0.0047 
- ,48261,Kenedy TX,[not in a ZCTA],12,0.0014 
- ,48269,King TX,[not in a ZCTA],10,0.0012 
- ,48271,Kinney TX,[not in a ZCTA],2,0.0002 
- ,48273,Kleberg TX,[not in a ZCTA],3,0.0004 
- ,48283,La Salle TX,[not in a ZCTA],15,0.0018 
- ,48301,Loving TX,[not in a ZCTA],7,0.0008 
- ,48321,Matagorda TX,[not in a ZCTA],7,0.0008 
- ,48323,Maverick TX,[not in a ZCTA],2,0.0002 
- ,48335,Mitchell TX,[not in a ZCTA],7,0.0008 
- ,48341,Moore TX,[not in a ZCTA],33,0.0039 
- ,48345,Motley TX,[not in a ZCTA],6,0.0007 
- ,48359,Oldham TX,[not in a ZCTA],7,0.0008 
- ,48371,Pecos TX,[not in a ZCTA],231,0.027 
- ,48377,Presidio TX,[not in a ZCTA],72,0.0084 
- ,48383,Reagan TX,[not in a ZCTA],11,0.0013 
- ,48389,Reeves TX,[not in a ZCTA],30,0.0035 
- ,48393,Roberts TX,[not in a ZCTA],5,0.0006 
- ,48413,Schleicher TX,[not in a ZCTA],6,0.0007 
- ,48417,Shackelford TX,[not in a ZCTA],7,0.0008 
- ,48421,Sherman TX,[not in a ZCTA],1,0.0001 
- ,48427,Starr TX,[not in a ZCTA],30,0.0035 
- ,48435,Sutton TX,[not in a ZCTA],4,0.0005 
- ,48443,Terrell TX,[not in a ZCTA],14,0.0016 
- ,48445,Terry TX,[not in a ZCTA],2,0.0002 
- ,48451,Tom Green TX,[not in a ZCTA],6,0.0007 
- ,48461,Upton TX,[not in a ZCTA],4,0.0005 
- ,48463,Uvalde TX,[not in a ZCTA],25,0.0029 
- ,48465,Val Verde TX,[not in a ZCTA],6,0.0007 
- ,48475,Ward TX,[not in a ZCTA],2,0.0002 
- ,48479,Webb TX,[not in a ZCTA],67,0.0078 
- ,48483,Wheeler TX,[not in a ZCTA],1,0.0001 
- ,48487,Wilbarger TX,[not in a ZCTA],2,0.0002 
- ,48495,Winkler TX,[not in a ZCTA],7,0.0008 
- ,48501,Yoakum TX,[not in a ZCTA],11,0.0013 
- ,48505,Zapata TX,[not in a ZCTA],4,0.0005 
- ,48507,Zavala TX,[not in a ZCTA],4,0.0005 
- ,49001,Beaver UT,[not in a ZCTA],22,0.0026 
- ,49003,Box Elder UT,[not in a ZCTA],18,0.0021 
- ,49005,Cache UT,[not in a ZCTA],3,0.0004 
- ,49007,Carbon UT,[not in a ZCTA],19,0.0022 
- ,49009,Daggett UT,[not in a ZCTA],9,0.0011 
- ,49013,Duchesne UT,[not in a ZCTA],26,0.003 
- ,49015,Emery UT,[not in a ZCTA],3,0.0004 
- ,49017,Garfield UT,[not in a ZCTA],70,0.0082 
- ,49021,Iron UT,[not in a ZCTA],62,0.0072 
- ,49023,Juab UT,[not in a ZCTA],76,0.0089 
- ,49025,Kane UT,[not in a ZCTA],19,0.0022 
- ,49027,Millard UT,[not in a ZCTA],37,0.0043 
- ,49031,Piute UT,[not in a ZCTA],7,0.0008 
- ,49033,Rich UT,[not in a ZCTA],13,0.0015 
- ,49037,San Juan UT,[not in a ZCTA],20,0.0023 
- ,49039,Sanpete UT,[not in a ZCTA],32,0.0037 
- ,49041,Sevier UT,[not in a ZCTA],23,0.0027 
- ,49043,Summit UT,[not in a ZCTA],10,0.0012 
- ,49045,Tooele UT,[not in a ZCTA],23,0.0027 
- ,49047,Uintah UT,[not in a ZCTA],36,0.0042 
- ,49049,Utah UT,[not in a ZCTA],51,0.006 
- ,49051,Wasatch UT,[not in a ZCTA],12,0.0014 
- ,49053,Washington UT,[not in a ZCTA],6,0.0007 
- ,49055,Wayne UT,[not in a ZCTA],17,0.002 
- ,51131,Northampton VA,[not in a ZCTA],7,0.0008 
- ,53007,Chelan WA,[not in a ZCTA],1,0.0001 
- ,53037,Kittitas WA,[not in a ZCTA],4,0.0005 
- ,53053,Pierce WA,[not in a ZCTA],12,0.0014 
- ,53055,San Juan WA,[not in a ZCTA],21,0.0025 
- ,53059,Skamania WA,[not in a ZCTA],4,0.0005 
- ,53061,Snohomish WA,[not in a ZCTA],7,0.0008 
- ,53077,Yakima WA,[not in a ZCTA],41,0.0048 
- ,55007,Bayfield WI,[not in a ZCTA],6,0.0007 
- ,55029,Door WI,[not in a ZCTA],1,0.0001 
- ,56001,Albany WY,[not in a ZCTA],19,0.0022 
- ,56003,Big Horn WY,[not in a ZCTA],9,0.0011 
- ,56005,Campbell WY,[not in a ZCTA],8,0.0009 
- ,56007,Carbon WY,[not in a ZCTA],112,0.0131 
- ,56009,Converse WY,[not in a ZCTA],14,0.0016 
- ,56013,Fremont WY,[not in a ZCTA],12,0.0014 
- ,56017,Hot Springs WY,[not in a ZCTA],6,0.0007 
- ,56019,Johnson WY,[not in a ZCTA],3,0.0004 
- ,56023,Lincoln WY,[not in a ZCTA],42,0.0049 
- ,56025,Natrona WY,[not in a ZCTA],38,0.0044 
- ,56027,Niobrara WY,[not in a ZCTA],18,0.0021 
- ,56029,Park WY,[not in a ZCTA],14,0.0016 
- ,56035,Sublette WY,[not in a ZCTA],2,0.0002 
- ,56037,Sweetwater WY,[not in a ZCTA],51,0.006 
- ,56039,Teton WY,[not in a ZCTA],10,0.0012 
- ,56041,Uinta WY,[not in a ZCTA],41,0.0048 
- ,72037,Ceiba Municipio PR,[not in a ZCTA],19,0.0022 
- ,72089,Luquillo Municipio PR,[not in a ZCTA],9,0.0011 
- ,72103,Naguabo Municipio PR,[not in a ZCTA],11,0.0013 
+zcta,county,CountyName,ZIPName,pop20,afact
+0000 ,01029,Cleburne AL,[not in a ZCTA],5,0.0006 
+0000 ,02013,Aleutians East Borough AK,[not in a ZCTA],10,0.0012 
+0000 ,02016,Aleutians West Census Area AK,[not in a ZCTA],235,0.0274 
+0000 ,02050,Bethel Census Area AK,[not in a ZCTA],126,0.0147 
+0000 ,02063,02063,[not in a ZCTA],21,0.0025 
+0000 ,02066,02066,[not in a ZCTA],3,0.0004 
+0000 ,02068,Denali Borough AK,[not in a ZCTA],6,0.0007 
+0000 ,02070,Dillingham Census Area AK,[not in a ZCTA],1,0.0001 
+0000 ,02090,Fairbanks North Star Borough AK,[not in a ZCTA],33,0.0039 
+0000 ,02105,Hoonah-Angoon Census Area,[not in a ZCTA],47,0.0055 
+0000 ,02110,Juneau Borough AK,[not in a ZCTA],56,0.0065 
+0000 ,02122,Kenai Peninsula Borough AK,[not in a ZCTA],21,0.0025 
+0000 ,02130,Ketchikan Gateway Borough AK,[not in a ZCTA],6,0.0007 
+0000 ,02150,Kodiak Island Borough AK,[not in a ZCTA],33,0.0039 
+0000 ,02158,Kusilvak Census Area (N),[not in a ZCTA],117,0.0137 
+0000 ,02164,Lake and Peninsula Borough AK,[not in a ZCTA],24,0.0028 
+0000 ,02170,Matanuska-Susitna Borough AK,[not in a ZCTA],24,0.0028 
+0000 ,02180,Nome Census Area AK,[not in a ZCTA],32,0.0037 
+0000 ,02185,North Slope Borough AK,[not in a ZCTA],245,0.0286 
+0000 ,02188,Northwest Arctic Borough AK,[not in a ZCTA],81,0.0095 
+0000 ,02195,Petersburg Census Area,[not in a ZCTA],6,0.0007 
+0000 ,02198,Prince of Wales-Hyder Census Area,[not in a ZCTA],20,0.0023 
+0000 ,02220,Sitka Borough AK,[not in a ZCTA],12,0.0014 
+0000 ,02240,Southeast Fairbanks Census Area AK,[not in a ZCTA],10,0.0012 
+0000 ,02282,Yakutat Borough,[not in a ZCTA],5,0.0006 
+0000 ,02290,Yukon-Koyukuk Census Area AK,[not in a ZCTA],60,0.007 
+0000 ,04001,Apache AZ,[not in a ZCTA],251,0.0293 
+0000 ,04005,Coconino AZ,[not in a ZCTA],114,0.0133 
+0000 ,04007,Gila AZ,[not in a ZCTA],13,0.0015 
+0000 ,04009,Graham AZ,[not in a ZCTA],26,0.003 
+0000 ,04013,Maricopa AZ,[not in a ZCTA],40,0.0047 
+0000 ,04015,Mohave AZ,[not in a ZCTA],27,0.0032 
+0000 ,04017,Navajo AZ,[not in a ZCTA],111,0.013 
+0000 ,04021,Pinal AZ,[not in a ZCTA],51,0.006 
+0000 ,04025,Yavapai AZ,[not in a ZCTA],17,0.002 
+0000 ,04027,Yuma AZ,[not in a ZCTA],1,0.0001 
+0000 ,05051,Garland AR,[not in a ZCTA],3,0.0004 
+0000 ,05061,Howard AR,[not in a ZCTA],1,0.0001 
+0000 ,05093,Mississippi AR,[not in a ZCTA],3,0.0004 
+0000 ,05105,Perry AR,[not in a ZCTA],2,0.0002 
+0000 ,05113,Polk AR,[not in a ZCTA],6,0.0007 
+0000 ,05119,Pulaski AR,[not in a ZCTA],18,0.0021 
+0000 ,05131,Sebastian AR,[not in a ZCTA],8,0.0009 
+0000 ,05133,Sevier AR,[not in a ZCTA],2,0.0002 
+0000 ,05149,Yell AR,[not in a ZCTA],3,0.0004 
+0000 ,06003,Alpine CA,[not in a ZCTA],3,0.0004 
+0000 ,06007,Butte CA,[not in a ZCTA],16,0.0019 
+0000 ,06013,Contra Costa CA,[not in a ZCTA],3,0.0004 
+0000 ,06015,Del Norte CA,[not in a ZCTA],11,0.0013 
+0000 ,06017,El Dorado CA,[not in a ZCTA],17,0.002 
+0000 ,06019,Fresno CA,[not in a ZCTA],51,0.006 
+0000 ,06021,Glenn CA,[not in a ZCTA],1,0.0001 
+0000 ,06023,Humboldt CA,[not in a ZCTA],23,0.0027 
+0000 ,06027,Inyo CA,[not in a ZCTA],59,0.0069 
+0000 ,06029,Kern CA,[not in a ZCTA],143,0.0167 
+0000 ,06031,Kings CA,[not in a ZCTA],3,0.0004 
+0000 ,06035,Lassen CA,[not in a ZCTA],19,0.0022 
+0000 ,06037,Los Angeles CA,[not in a ZCTA],170,0.0198 
+0000 ,06039,Madera CA,[not in a ZCTA],5,0.0006 
+0000 ,06045,Mendocino CA,[not in a ZCTA],31,0.0036 
+0000 ,06047,Merced CA,[not in a ZCTA],33,0.0039 
+0000 ,06049,Modoc CA,[not in a ZCTA],17,0.002 
+0000 ,06051,Mono CA,[not in a ZCTA],39,0.0046 
+0000 ,06053,Monterey CA,[not in a ZCTA],22,0.0026 
+0000 ,06057,Nevada CA,[not in a ZCTA],29,0.0034 
+0000 ,06061,Placer CA,[not in a ZCTA],11,0.0013 
+0000 ,06063,Plumas CA,[not in a ZCTA],81,0.0095 
+0000 ,06065,Riverside CA,[not in a ZCTA],14,0.0016 
+0000 ,06069,San Benito CA,[not in a ZCTA],22,0.0026 
+0000 ,06071,San Bernardino CA,[not in a ZCTA],62,0.0072 
+0000 ,06073,San Diego CA,[not in a ZCTA],135,0.0158 
+0000 ,06075,San Francisco CA,[not in a ZCTA],32,0.0037 
+0000 ,06079,San Luis Obispo CA,[not in a ZCTA],10,0.0012 
+0000 ,06081,San Mateo CA,[not in a ZCTA],30,0.0035 
+0000 ,06083,Santa Barbara CA,[not in a ZCTA],29,0.0034 
+0000 ,06085,Santa Clara CA,[not in a ZCTA],42,0.0049 
+0000 ,06089,Shasta CA,[not in a ZCTA],21,0.0025 
+0000 ,06091,Sierra CA,[not in a ZCTA],35,0.0041 
+0000 ,06093,Siskiyou CA,[not in a ZCTA],6,0.0007 
+0000 ,06103,Tehama CA,[not in a ZCTA],12,0.0014 
+0000 ,06105,Trinity CA,[not in a ZCTA],175,0.0204 
+0000 ,06107,Tulare CA,[not in a ZCTA],18,0.0021 
+0000 ,06109,Tuolumne CA,[not in a ZCTA],41,0.0048 
+0000 ,06111,Ventura CA,[not in a ZCTA],10,0.0012 
+0000 ,12021,Collier FL,[not in a ZCTA],15,0.0018 
+0000 ,12029,Dixie FL,[not in a ZCTA],7,0.0008 
+0000 ,12033,Escambia FL,[not in a ZCTA],2,0.0002 
+0000 ,12037,Franklin FL,[not in a ZCTA],6,0.0007 
+0000 ,12067,Lafayette FL,[not in a ZCTA],12,0.0014 
+0000 ,12075,Levy FL,[not in a ZCTA],7,0.0008 
+0000 ,12087,Monroe FL,[not in a ZCTA],25,0.0029 
+0000 ,12113,Santa Rosa FL,[not in a ZCTA],5,0.0006 
+0000 ,12123,Taylor FL,[not in a ZCTA],5,0.0006 
+0000 ,13039,Camden GA,[not in a ZCTA],11,0.0013 
+0000 ,13065,Clinch GA,[not in a ZCTA],6,0.0007 
+0000 ,15001,Hawaii HI,[not in a ZCTA],32,0.0037 
+0000 ,15007,Kauai HI,[not in a ZCTA],121,0.0141 
+0000 ,16003,Adams ID,[not in a ZCTA],4,0.0005 
+0000 ,16011,Bingham ID,[not in a ZCTA],43,0.005 
+0000 ,16025,Camas ID,[not in a ZCTA],3,0.0004 
+0000 ,16029,Caribou ID,[not in a ZCTA],8,0.0009 
+0000 ,16031,Cassia ID,[not in a ZCTA],8,0.0009 
+0000 ,16033,Clark ID,[not in a ZCTA],15,0.0018 
+0000 ,16035,Clearwater ID,[not in a ZCTA],21,0.0025 
+0000 ,16039,Elmore ID,[not in a ZCTA],2,0.0002 
+0000 ,16047,Gooding ID,[not in a ZCTA],8,0.0009 
+0000 ,16049,Idaho ID,[not in a ZCTA],30,0.0035 
+0000 ,16051,Jefferson ID,[not in a ZCTA],9,0.0011 
+0000 ,16065,Madison ID,[not in a ZCTA],3,0.0004 
+0000 ,16073,Owyhee ID,[not in a ZCTA],20,0.0023 
+0000 ,16079,Shoshone ID,[not in a ZCTA],5,0.0006 
+0000 ,16083,Twin Falls ID,[not in a ZCTA],11,0.0013 
+0000 ,16085,Valley ID,[not in a ZCTA],15,0.0018 
+0000 ,19005,Allamakee IA,[not in a ZCTA],2,0.0002 
+0000 ,20161,Riley KS,[not in a ZCTA],1,0.0001 
+0000 ,21163,Meade KY,[not in a ZCTA],7,0.0008 
+0000 ,22045,Iberia Parish LA,[not in a ZCTA],7,0.0008 
+0000 ,22047,Iberville Parish LA,[not in a ZCTA],10,0.0012 
+0000 ,22051,Jefferson Parish LA,[not in a ZCTA],6,0.0007 
+0000 ,22075,Plaquemines Parish LA,[not in a ZCTA],9,0.0011 
+0000 ,22089,St. Charles Parish LA,[not in a ZCTA],5,0.0006 
+0000 ,22093,St. James Parish LA,[not in a ZCTA],6,0.0007 
+0000 ,22095,St. John the Baptist Parish LA,[not in a ZCTA],3,0.0004 
+0000 ,22099,St. Martin Parish LA,[not in a ZCTA],44,0.0051 
+0000 ,22103,St. Tammany Parish LA,[not in a ZCTA],19,0.0022 
+0000 ,22109,Terrebonne Parish LA,[not in a ZCTA],8,0.0009 
+0000 ,22113,Vermilion Parish LA,[not in a ZCTA],17,0.002 
+0000 ,22125,West Feliciana Parish LA,[not in a ZCTA],1,0.0001 
+0000 ,23003,Aroostook ME,[not in a ZCTA],12,0.0014 
+0000 ,23009,Hancock ME,[not in a ZCTA],3,0.0004 
+0000 ,23015,Lincoln ME,[not in a ZCTA],3,0.0004 
+0000 ,23021,Piscataquis ME,[not in a ZCTA],8,0.0009 
+0000 ,23025,Somerset ME,[not in a ZCTA],3,0.0004 
+0000 ,23029,Washington ME,[not in a ZCTA],23,0.0027 
+0000 ,25001,Barnstable MA,[not in a ZCTA],1,0.0001 
+0000 ,25023,Plymouth MA,[not in a ZCTA],12,0.0014 
+0000 ,26079,Kalkaska MI,[not in a ZCTA],4,0.0005 
+0000 ,26089,Leelanau MI,[not in a ZCTA],3,0.0004 
+0000 ,26113,Missaukee MI,[not in a ZCTA],2,0.0002 
+0000 ,26135,Oscoda MI,[not in a ZCTA],2,0.0002 
+0000 ,26143,Roscommon MI,[not in a ZCTA],3,0.0004 
+0000 ,27007,Beltrami MN,[not in a ZCTA],12,0.0014 
+0000 ,27077,Lake of the Woods MN,[not in a ZCTA],2,0.0002 
+0000 ,28027,Coahoma MS,[not in a ZCTA],1,0.0001 
+0000 ,28045,Hancock MS,[not in a ZCTA],45,0.0053 
+0000 ,30003,Big Horn MT,[not in a ZCTA],17,0.002 
+0000 ,30005,Blaine MT,[not in a ZCTA],4,0.0005 
+0000 ,30029,Flathead MT,[not in a ZCTA],4,0.0005 
+0000 ,32001,Churchill NV,[not in a ZCTA],2,0.0002 
+0000 ,32003,Clark NV,[not in a ZCTA],12,0.0014 
+0000 ,32007,Elko NV,[not in a ZCTA],353,0.0412 
+0000 ,32009,Esmeralda NV,[not in a ZCTA],6,0.0007 
+0000 ,32011,Eureka NV,[not in a ZCTA],31,0.0036 
+0000 ,32013,Humboldt NV,[not in a ZCTA],37,0.0043 
+0000 ,32015,Lander NV,[not in a ZCTA],13,0.0015 
+0000 ,32017,Lincoln NV,[not in a ZCTA],6,0.0007 
+0000 ,32021,Mineral NV,[not in a ZCTA],23,0.0027 
+0000 ,32023,Nye NV,[not in a ZCTA],105,0.0123 
+0000 ,32027,Pershing NV,[not in a ZCTA],39,0.0046 
+0000 ,32033,White Pine NV,[not in a ZCTA],152,0.0177 
+0000 ,35003,Catron NM,[not in a ZCTA],62,0.0072 
+0000 ,35006,Cibola NM,[not in a ZCTA],77,0.009 
+0000 ,35007,Colfax NM,[not in a ZCTA],10,0.0012 
+0000 ,35013,Dona Ana NM,[not in a ZCTA],8,0.0009 
+0000 ,35031,McKinley NM,[not in a ZCTA],133,0.0155 
+0000 ,35033,Mora NM,[not in a ZCTA],13,0.0015 
+0000 ,35035,Otero NM,[not in a ZCTA],4,0.0005 
+0000 ,35039,Rio Arriba NM,[not in a ZCTA],47,0.0055 
+0000 ,35043,Sandoval NM,[not in a ZCTA],15,0.0018 
+0000 ,35045,San Juan NM,[not in a ZCTA],148,0.0173 
+0000 ,35047,San Miguel NM,[not in a ZCTA],5,0.0006 
+0000 ,35051,Sierra NM,[not in a ZCTA],5,0.0006 
+0000 ,35053,Socorro NM,[not in a ZCTA],40,0.0047 
+0000 ,35055,Taos NM,[not in a ZCTA],36,0.0042 
+0000 ,35061,Valencia NM,[not in a ZCTA],1,0.0001 
+0000 ,36005,Bronx NY,[not in a ZCTA],4,0.0005 
+0000 ,36027,Dutchess NY,[not in a ZCTA],4,0.0005 
+0000 ,36033,Franklin NY,[not in a ZCTA],5,0.0006 
+0000 ,36045,Jefferson NY,[not in a ZCTA],3,0.0004 
+0000 ,36061,New York NY,[not in a ZCTA],112,0.0131 
+0000 ,36075,Oswego NY,[not in a ZCTA],4,0.0005 
+0000 ,36081,Queens NY,[not in a ZCTA],23,0.0027 
+0000 ,36103,Suffolk NY,[not in a ZCTA],13,0.0015 
+0000 ,36111,Ulster NY,[not in a ZCTA],9,0.0011 
+0000 ,36119,Westchester NY,[not in a ZCTA],54,0.0063 
+0000 ,36123,Yates NY,[not in a ZCTA],1,0.0001 
+0000 ,39123,Ottawa OH,[not in a ZCTA],7,0.0008 
+0000 ,40031,Comanche OK,[not in a ZCTA],6,0.0007 
+0000 ,40089,McCurtain OK,[not in a ZCTA],47,0.0055 
+0000 ,40121,Pittsburg OK,[not in a ZCTA],5,0.0006 
+0000 ,40127,Pushmataha OK,[not in a ZCTA],1,0.0001 
+0000 ,41001,Baker OR,[not in a ZCTA],4,0.0005 
+0000 ,41009,Columbia OR,[not in a ZCTA],2,0.0002 
+0000 ,41013,Crook OR,[not in a ZCTA],13,0.0015 
+0000 ,41017,Deschutes OR,[not in a ZCTA],45,0.0053 
+0000 ,41019,Douglas OR,[not in a ZCTA],12,0.0014 
+0000 ,41023,Grant OR,[not in a ZCTA],1,0.0001 
+0000 ,41025,Harney OR,[not in a ZCTA],7,0.0008 
+0000 ,41029,Jackson OR,[not in a ZCTA],36,0.0042 
+0000 ,41031,Jefferson OR,[not in a ZCTA],14,0.0016 
+0000 ,41035,Klamath OR,[not in a ZCTA],61,0.0071 
+0000 ,41037,Lake OR,[not in a ZCTA],34,0.004 
+0000 ,41039,Lane OR,[not in a ZCTA],20,0.0023 
+0000 ,41043,Linn OR,[not in a ZCTA],4,0.0005 
+0000 ,41045,Malheur OR,[not in a ZCTA],5,0.0006 
+0000 ,41057,Tillamook OR,[not in a ZCTA],7,0.0008 
+0000 ,41059,Umatilla OR,[not in a ZCTA],24,0.0028 
+0000 ,41061,Union OR,[not in a ZCTA],4,0.0005 
+0000 ,41063,Wallowa OR,[not in a ZCTA],3,0.0004 
+0000 ,41065,Wasco OR,[not in a ZCTA],7,0.0008 
+0000 ,41069,Wheeler OR,[not in a ZCTA],1,0.0001 
+0000 ,44005,Newport RI,[not in a ZCTA],1,0.0001 
+0000 ,48003,Andrews TX,[not in a ZCTA],22,0.0026 
+0000 ,48007,Aransas TX,[not in a ZCTA],13,0.0015 
+0000 ,48033,Borden TX,[not in a ZCTA],1,0.0001 
+0000 ,48043,Brewster TX,[not in a ZCTA],147,0.0172 
+0000 ,48045,Briscoe TX,[not in a ZCTA],1,0.0001 
+0000 ,48047,Brooks TX,[not in a ZCTA],6,0.0007 
+0000 ,48059,Callahan TX,[not in a ZCTA],3,0.0004 
+0000 ,48065,Carson TX,[not in a ZCTA],8,0.0009 
+0000 ,48071,Chambers TX,[not in a ZCTA],12,0.0014 
+0000 ,48079,Cochran TX,[not in a ZCTA],2,0.0002 
+0000 ,48081,Coke TX,[not in a ZCTA],10,0.0012 
+0000 ,48087,Collingsworth TX,[not in a ZCTA],16,0.0019 
+0000 ,48099,Coryell TX,[not in a ZCTA],4,0.0005 
+0000 ,48101,Cottle TX,[not in a ZCTA],3,0.0004 
+0000 ,48107,Crosby TX,[not in a ZCTA],6,0.0007 
+0000 ,48109,Culberson TX,[not in a ZCTA],85,0.0099 
+0000 ,48117,Deaf Smith TX,[not in a ZCTA],4,0.0005 
+0000 ,48127,Dimmit TX,[not in a ZCTA],41,0.0048 
+0000 ,48131,Duval TX,[not in a ZCTA],6,0.0007 
+0000 ,48135,Ector TX,[not in a ZCTA],8,0.0009 
+0000 ,48167,Galveston TX,[not in a ZCTA],1,0.0001 
+0000 ,48173,Glasscock TX,[not in a ZCTA],11,0.0013 
+0000 ,48179,Gray TX,[not in a ZCTA],9,0.0011 
+0000 ,48189,Hale TX,[not in a ZCTA],3,0.0004 
+0000 ,48191,Hall TX,[not in a ZCTA],4,0.0005 
+0000 ,48205,Hartley TX,[not in a ZCTA],2,0.0002 
+0000 ,48207,Haskell TX,[not in a ZCTA],8,0.0009 
+0000 ,48215,Hidalgo TX,[not in a ZCTA],1,0.0001 
+0000 ,48227,Howard TX,[not in a ZCTA],6,0.0007 
+0000 ,48229,Hudspeth TX,[not in a ZCTA],43,0.005 
+0000 ,48233,Hutchinson TX,[not in a ZCTA],31,0.0036 
+0000 ,48235,Irion TX,[not in a ZCTA],22,0.0026 
+0000 ,48243,Jeff Davis TX,[not in a ZCTA],40,0.0047 
+0000 ,48261,Kenedy TX,[not in a ZCTA],12,0.0014 
+0000 ,48269,King TX,[not in a ZCTA],10,0.0012 
+0000 ,48271,Kinney TX,[not in a ZCTA],2,0.0002 
+0000 ,48273,Kleberg TX,[not in a ZCTA],3,0.0004 
+0000 ,48283,La Salle TX,[not in a ZCTA],15,0.0018 
+0000 ,48301,Loving TX,[not in a ZCTA],7,0.0008 
+0000 ,48321,Matagorda TX,[not in a ZCTA],7,0.0008 
+0000 ,48323,Maverick TX,[not in a ZCTA],2,0.0002 
+0000 ,48335,Mitchell TX,[not in a ZCTA],7,0.0008 
+0000 ,48341,Moore TX,[not in a ZCTA],33,0.0039 
+0000 ,48345,Motley TX,[not in a ZCTA],6,0.0007 
+0000 ,48359,Oldham TX,[not in a ZCTA],7,0.0008 
+0000 ,48371,Pecos TX,[not in a ZCTA],231,0.027 
+0000 ,48377,Presidio TX,[not in a ZCTA],72,0.0084 
+0000 ,48383,Reagan TX,[not in a ZCTA],11,0.0013 
+0000 ,48389,Reeves TX,[not in a ZCTA],30,0.0035 
+0000 ,48393,Roberts TX,[not in a ZCTA],5,0.0006 
+0000 ,48413,Schleicher TX,[not in a ZCTA],6,0.0007 
+0000 ,48417,Shackelford TX,[not in a ZCTA],7,0.0008 
+0000 ,48421,Sherman TX,[not in a ZCTA],1,0.0001 
+0000 ,48427,Starr TX,[not in a ZCTA],30,0.0035 
+0000 ,48435,Sutton TX,[not in a ZCTA],4,0.0005 
+0000 ,48443,Terrell TX,[not in a ZCTA],14,0.0016 
+0000 ,48445,Terry TX,[not in a ZCTA],2,0.0002 
+0000 ,48451,Tom Green TX,[not in a ZCTA],6,0.0007 
+0000 ,48461,Upton TX,[not in a ZCTA],4,0.0005 
+0000 ,48463,Uvalde TX,[not in a ZCTA],25,0.0029 
+0000 ,48465,Val Verde TX,[not in a ZCTA],6,0.0007 
+0000 ,48475,Ward TX,[not in a ZCTA],2,0.0002 
+0000 ,48479,Webb TX,[not in a ZCTA],67,0.0078 
+0000 ,48483,Wheeler TX,[not in a ZCTA],1,0.0001 
+0000 ,48487,Wilbarger TX,[not in a ZCTA],2,0.0002 
+0000 ,48495,Winkler TX,[not in a ZCTA],7,0.0008 
+0000 ,48501,Yoakum TX,[not in a ZCTA],11,0.0013 
+0000 ,48505,Zapata TX,[not in a ZCTA],4,0.0005 
+0000 ,48507,Zavala TX,[not in a ZCTA],4,0.0005 
+0000 ,49001,Beaver UT,[not in a ZCTA],22,0.0026 
+0000 ,49003,Box Elder UT,[not in a ZCTA],18,0.0021 
+0000 ,49005,Cache UT,[not in a ZCTA],3,0.0004 
+0000 ,49007,Carbon UT,[not in a ZCTA],19,0.0022 
+0000 ,49009,Daggett UT,[not in a ZCTA],9,0.0011 
+0000 ,49013,Duchesne UT,[not in a ZCTA],26,0.003 
+0000 ,49015,Emery UT,[not in a ZCTA],3,0.0004 
+0000 ,49017,Garfield UT,[not in a ZCTA],70,0.0082 
+0000 ,49021,Iron UT,[not in a ZCTA],62,0.0072 
+0000 ,49023,Juab UT,[not in a ZCTA],76,0.0089 
+0000 ,49025,Kane UT,[not in a ZCTA],19,0.0022 
+0000 ,49027,Millard UT,[not in a ZCTA],37,0.0043 
+0000 ,49031,Piute UT,[not in a ZCTA],7,0.0008 
+0000 ,49033,Rich UT,[not in a ZCTA],13,0.0015 
+0000 ,49037,San Juan UT,[not in a ZCTA],20,0.0023 
+0000 ,49039,Sanpete UT,[not in a ZCTA],32,0.0037 
+0000 ,49041,Sevier UT,[not in a ZCTA],23,0.0027 
+0000 ,49043,Summit UT,[not in a ZCTA],10,0.0012 
+0000 ,49045,Tooele UT,[not in a ZCTA],23,0.0027 
+0000 ,49047,Uintah UT,[not in a ZCTA],36,0.0042 
+0000 ,49049,Utah UT,[not in a ZCTA],51,0.006 
+0000 ,49051,Wasatch UT,[not in a ZCTA],12,0.0014 
+0000 ,49053,Washington UT,[not in a ZCTA],6,0.0007 
+0000 ,49055,Wayne UT,[not in a ZCTA],17,0.002 
+0000 ,51131,Northampton VA,[not in a ZCTA],7,0.0008 
+0000 ,53007,Chelan WA,[not in a ZCTA],1,0.0001 
+0000 ,53037,Kittitas WA,[not in a ZCTA],4,0.0005 
+0000 ,53053,Pierce WA,[not in a ZCTA],12,0.0014 
+0000 ,53055,San Juan WA,[not in a ZCTA],21,0.0025 
+0000 ,53059,Skamania WA,[not in a ZCTA],4,0.0005 
+0000 ,53061,Snohomish WA,[not in a ZCTA],7,0.0008 
+0000 ,53077,Yakima WA,[not in a ZCTA],41,0.0048 
+0000 ,55007,Bayfield WI,[not in a ZCTA],6,0.0007 
+0000 ,55029,Door WI,[not in a ZCTA],1,0.0001 
+0000 ,56001,Albany WY,[not in a ZCTA],19,0.0022 
+0000 ,56003,Big Horn WY,[not in a ZCTA],9,0.0011 
+0000 ,56005,Campbell WY,[not in a ZCTA],8,0.0009 
+0000 ,56007,Carbon WY,[not in a ZCTA],112,0.0131 
+0000 ,56009,Converse WY,[not in a ZCTA],14,0.0016 
+0000 ,56013,Fremont WY,[not in a ZCTA],12,0.0014 
+0000 ,56017,Hot Springs WY,[not in a ZCTA],6,0.0007 
+0000 ,56019,Johnson WY,[not in a ZCTA],3,0.0004 
+0000 ,56023,Lincoln WY,[not in a ZCTA],42,0.0049 
+0000 ,56025,Natrona WY,[not in a ZCTA],38,0.0044 
+0000 ,56027,Niobrara WY,[not in a ZCTA],18,0.0021 
+0000 ,56029,Park WY,[not in a ZCTA],14,0.0016 
+0000 ,56035,Sublette WY,[not in a ZCTA],2,0.0002 
+0000 ,56037,Sweetwater WY,[not in a ZCTA],51,0.006 
+0000 ,56039,Teton WY,[not in a ZCTA],10,0.0012 
+0000 ,56041,Uinta WY,[not in a ZCTA],41,0.0048 
+0000 ,72037,Ceiba Municipio PR,[not in a ZCTA],19,0.0022 
+0000 ,72089,Luquillo Municipio PR,[not in a ZCTA],9,0.0011 
+0000 ,72103,Naguabo Municipio PR,[not in a ZCTA],11,0.0013 
 00601,72001,Adjuntas Municipio PR,"Adjuntas, PR",17156,0.995 
 00601,72141,Utuado Municipio PR,"Adjuntas, PR",86,0.005 
 00602,72003,Aguada Municipio PR,"Aguada, PR",37532,0.9996 
