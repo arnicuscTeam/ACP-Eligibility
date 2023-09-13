@@ -271,8 +271,79 @@ def crosswalkUSACData(data_directory: str, code_dict: dict[str, list[tuple[str, 
     del zip_data_dict
 
 
-def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str = "zcta"):
+def addCDFlag(data_dir: str, code_col: str):
 
+    """
+    This function adds a column to the final file that indicates whether or not the congressional district is
+    represented by a Democrat.
+    :param data_dir: Path to the data directory
+    :param code_col: Column name of the target geography code
+    :return: None, the data is saved to a csv file
+    """
+
+    # Path to the folder containing the csv files
+    cd_folder = data_dir + "ACP_Households/CD_Data/"
+
+    # Path to the file containing the party for each cd
+    cd_file = cd_folder + "CD_by_party.csv"
+
+    # Path to the final file folder
+    house_holds_folder = data_dir + "ACP_Households/Final_Files/"
+
+    # Path to the final file
+    cd_final_file = ""
+    for file in os.listdir(house_holds_folder):
+        if "cd" in file:
+            cd_final_file = house_holds_folder + file
+            break
+
+    # Read the cd file
+    cd_file_df = pd.read_csv(cd_file)
+
+    # Convert the party column to a binary variable
+    cd_file_df["party"] = cd_file_df["party"].apply(lambda x: 1 if x == "DEMOCRAT" else 0)
+
+    cd_file_df["state_fips"] = cd_file_df["state_fips"].astype(str)
+    cd_file_df["state_fips"] = cd_file_df["state_fips"].str.zfill(2)
+
+    cd_file_df["district"] = cd_file_df["district"].astype(str)
+    cd_file_df["district"] = cd_file_df["district"].str.zfill(2)
+
+    cd_file_df["districtID"] = cd_file_df["districtID"].astype(str)
+    cd_file_df["districtID"] = cd_file_df["state_fips"] + cd_file_df["district"]
+    cd_file_df["districtID"] = cd_file_df["districtID"].str.zfill(4)
+
+    # Rename the columns
+    cd_file_df.rename(columns={"party": "CD_Democrat"}, inplace=True)
+    cd_file_df.rename(columns={"districtID": code_col}, inplace=True)
+
+    # Only keep the columns we need, CD_Democrat and code_col
+    cd_file_df = cd_file_df[[code_col, "CD_Democrat"]]
+
+    # Read the ACP Households file
+    acp_df = pd.read_csv(cd_final_file)
+
+    # Convert the code column to a string
+    acp_df[code_col] = acp_df[code_col].astype(str)
+
+    # zfill the code column
+    acp_df[code_col] = acp_df[code_col].str.zfill(4)
+
+    # Merge the two dataframes
+    acp_df = acp_df.merge(cd_file_df, on=code_col, how="left")
+
+    # Fill the NaN values with "N/A"
+    acp_df["CD_Democrat"] = acp_df["CD_Democrat"].fillna("NA")
+
+    # Save the dataframe as a csv file
+    acp_df.to_csv(cd_final_file, index=False)
+
+    # Delete the dataframes to save memory
+    del cd_file_df
+    del acp_df
+
+
+def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str = "zcta"):
     final_folder = os.path.join(data_directory, "ACP_Households", "Final_Files")
     final_zip_file = os.path.join(final_folder, "Total-ACP-Households-by-zcta.csv")
     df = pd.read_csv(final_zip_file)
@@ -291,7 +362,6 @@ def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str 
         cw_file = os.path.join(zcta_cw_folder, "United_States_Zip-Zcta_to_State.csv")
     elif target_geo == "118th Congress (2023-2024)":
         cw_file = os.path.join(zcta_cw_folder, "United_States_Zip-Zcta_to_118Th-Congress-(2023-2024).csv")
-
 
     dc, col_name = code_to_source_dict(cw_file, source_col)
     zip_data = organizeDataByZip(df)
