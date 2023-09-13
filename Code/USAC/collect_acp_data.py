@@ -288,9 +288,9 @@ def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str 
     elif target_geo == "County":
         cw_file = os.path.join(zcta_cw_folder, "United_States_Zip-Zcta_to_County.csv")
     elif target_geo == "State":
-        cw_file = os.path.join(zcta_cw_folder, "United_States_ZIP-ZCTA_to_State.csv")
-
-
+        cw_file = os.path.join(zcta_cw_folder, "United_States_Zip-Zcta_to_State.csv")
+    elif target_geo == "118th Congress (2023-2024)":
+        cw_file = os.path.join(zcta_cw_folder, "United_States_Zip-Zcta_to_118Th-Congress-(2023-2024).csv")
 
 
     dc, col_name = code_to_source_dict(cw_file, source_col)
