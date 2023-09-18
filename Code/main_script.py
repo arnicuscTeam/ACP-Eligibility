@@ -56,36 +56,36 @@ def main():
     #                       disability=1, elderly=1, eng_very_well=1)
     # determine_eligibility(data_dir, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1, veteran=1,
     #                       disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=county, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=county, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=county, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=congressional_district, povpip=150, aian=1, asian=1, black=1, hispanic=1,
-                          white=1, nhpi=1, veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=congressional_district, povpip=135, aian=1, asian=1, black=1, hispanic=1,
-                          white=1, nhpi=1, veteran=1,disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=congressional_district, povpip=120, aian=1, asian=1, black=1, hispanic=1,
-                          white=1, nhpi=1, veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=metro, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=metro, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=metro, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=zcta, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=zcta, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=zcta, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=state, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=state, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
-    determine_eligibility(data_dir, geography=state, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
-                          veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=county, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=county, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=county, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=congressional_district, povpip=150, aian=1, asian=1, black=1, hispanic=1,
+    #                       white=1, nhpi=1, veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=congressional_district, povpip=135, aian=1, asian=1, black=1, hispanic=1,
+    #                       white=1, nhpi=1, veteran=1,disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=congressional_district, povpip=120, aian=1, asian=1, black=1, hispanic=1,
+    #                       white=1, nhpi=1, veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=metro, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=metro, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=metro, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=zcta, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=zcta, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=zcta, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=state, povpip=150, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=state, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
+    # determine_eligibility(data_dir, geography=state, povpip=120, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1,
+    #                       veteran=1, disability=1, elderly=1, eng_very_well=1)
     #
     # # Download zcta crosswalk files
     # downloadCrossWalkFile(link, data_dir, zcta, county)
@@ -99,6 +99,9 @@ def main():
     # ZCTAtoTargetGeography(data_dir, metro)
     # ZCTAtoTargetGeography(data_dir, state)
     # ZCTAtoTargetGeography(data_dir, puma)
+
+    for i in range(135, 200):
+        determine_eligibility(data_dir, povpip=i, geography=state, end_folder="National_Changes/")
 
 
 if __name__ == '__main__':

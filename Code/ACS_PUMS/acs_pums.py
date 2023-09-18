@@ -714,7 +714,7 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
                           has_snap: int = 1, geography: str = "Public-use microdata area (PUMA)",
                           aian: int = 0, asian: int = 0, black: int = 0, nhpi: int = 0, white: int = 0,
                           hispanic: int = 0, veteran: int = 0, elderly: int = 0, disability: int = 0,
-                          eng_very_well: int = 0):
+                          eng_very_well: int = 0, end_folder: str = "Change_Eligibility/"):
     """
     This function will determine eligibility for ACP for all states. It does so by iterating through all the states and
     reading the eligibility data for each state. It will then aggregate the data by the geography specified. It will
@@ -736,6 +736,7 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
     :param elderly: Whether we want to see the effects to the Elderly population 0|1
     :param disability: Whether we want to see the effects to the Disability population 0|1
     :param eng_very_well: Whether we want to see the effects to the population that speaks English very well 0|1
+    :param end_folder: The folder to save the data to
     :return: None, but saves the data to csv files
     """
 
@@ -743,15 +744,18 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
     pums_folder = data_dir + "ACS_PUMS/"
     state_folder = pums_folder + "state_data/"
     current_data = pums_folder + "Current_Eligibility/"
-    test_data = pums_folder + "Change_Eligibility/"
+    test_data = pums_folder + end_folder
     geocorr_folder = data_dir + "GeoCorr/"
     puma_cw_folder = geocorr_folder + "Public-use microdata area (PUMA)/"
+
 
     if not os.path.exists(current_data):
         os.makedirs(current_data)
 
     if not os.path.exists(test_data):
         os.makedirs(test_data)
+
+
 
     # Dictionary to map the geography to the code column and crosswalk file
     geography_mapping = {
@@ -972,9 +976,6 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
                     main_df = main_df.drop(
                         columns=["Current " + population_name + " Eligible", "difference_" + population_var])
 
-            # Drop the columns that are no longer needed
-            main_df = main_df.drop(columns=["Num Eligible", "Num Ineligible"])
-
             # Combine duplicate columns
             main_df = main_df.loc[:, ~main_df.columns.duplicated()]
 
@@ -1086,8 +1087,6 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
                                                                                 " Eligible"] * 100).round(2)
                     new_df = new_df.drop(
                         columns=["Current " + population_name + " Eligible", "difference_" + population_var])
-
-            new_df = new_df.drop(columns=["Num Eligible", "Num Ineligible"])
 
             # Combine duplicate columns
             new_df = new_df.loc[:, ~new_df.columns.duplicated()]
@@ -1400,6 +1399,59 @@ def cleanData(data_dir: str):
         main_df.to_csv(test_folder + f"combined-{geography}.csv", index=False)
 
 
+def createDeliverableFiles(data_dir: str):
+    pums_folder = data_dir + "ACS_PUMS/"
+
+    deliverable_folder = pums_folder + "deliverable_file/"
+    national_folder = pums_folder + "National_Changes/"
+
+    # Turn the excel file into a csv file
+    df = pd.read_excel(deliverable_folder + "State_135_v2.xlsx", header=0)
+
+    df["state"] = df["state"].astype(str).str.zfill(2)
+
+    df = df.dropna(subset=["Medicaid expansion (1)"])
+
+    df = df[["state", " stusps", "Medicaid expansion (1)", "Party", "ACP Participation July 23 (2)", "Avg claim $ Jan-Jul 2023 (3)"]]
+
+    for file in os.listdir(national_folder):
+        if file.endswith(".csv"):
+            df_change = pd.read_csv(national_folder + file, header=0, dtype={"state": str})
+
+            if " stusps" not in df_change.columns.tolist():
+                df_change["state"] = df_change["state"].astype(str).str.zfill(2)
+
+                df_change = pd.merge(df_change, df, on="state", how="left")
+
+                cols = df_change.columns.tolist()
+
+                cols.remove(" stusps")
+
+                cols.insert(1, " stusps")
+
+                df_change = df_change[cols]
+
+            df_change["Total dif"] = df_change["Current Num Eligible"] - df_change["Num Eligible"]
+
+            df_change["Weighed dif"] = df_change["Total dif"] * df_change["ACP Participation July 23 (2)"]
+
+            df_change["Saving in $"] = df_change["Weighed dif"] * df_change["Avg claim $ Jan-Jul 2023 (3)"]
+
+            df_change.to_csv(national_folder + file, index=False)
+
+
+
+
+
+
+
+
+
+
+
+
+
 if __name__ == '__main__':
-    cleanData("../../Data/")
-    add_participation_rate_combined("../../Data/")
+    # cleanData("../../Data/")
+    # add_participation_rate_combined("../../Data/")
+    createDeliverableFiles("../../Data/")
