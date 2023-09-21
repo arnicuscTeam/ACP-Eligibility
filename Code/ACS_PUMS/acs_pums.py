@@ -1440,6 +1440,28 @@ def createDeliverableFiles(data_dir: str):
             df_change.to_csv(national_folder + file, index=False)
 
 
+def aggregateSavings(data_dir: str):
+    pums_folder = data_dir + "ACS_PUMS/"
+    national_folder = pums_folder + "National_Changes/"
+    deliverable_folder = pums_folder + "deliverable_file/"
+
+    main_df = pd.DataFrame(columns=["POVPIP", "National Saving"])
+
+    for file in os.listdir(national_folder):
+        povpip = file.split("_")[3]
+        df = pd.read_csv(national_folder + file, header=0)
+
+        total_savings = round((df["Saving in $"].sum()), 2)
+
+        new_df = pd.DataFrame([[povpip, total_savings]], columns=["POVPIP", "National Saving"])
+
+        main_df = pd.concat([main_df, new_df], axis=0)
+
+    main_df = main_df.sort_values(by=["POVPIP"])
+
+
+    main_df.to_csv(deliverable_folder + "national_savings.csv", index=False)
+
 
 
 
@@ -1455,3 +1477,4 @@ if __name__ == '__main__':
     # cleanData("../../Data/")
     # add_participation_rate_combined("../../Data/")
     createDeliverableFiles("../../Data/")
+    aggregateSavings("../../Data/")

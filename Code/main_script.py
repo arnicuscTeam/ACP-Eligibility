@@ -100,7 +100,7 @@ def main():
     # ZCTAtoTargetGeography(data_dir, state)
     # ZCTAtoTargetGeography(data_dir, puma)
 
-    for i in range(135, 200):
+    for i in range(120, 200):
         determine_eligibility(data_dir, povpip=i, geography=state, end_folder="National_Changes/")
 
 
