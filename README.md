@@ -198,3 +198,6 @@ Finally, we crosswalk the data to the different geographies by calling the
 If the target geography is Congressional District, we add a flag indicating if the district is Democratic or Republican.
 1 means that the district is Democratic and 0 means that the district is Republican. The code that does this can be
 found: [addCDFlag](Code/USAC/collect_acp_data.py). 
+
+All of these functions are combined into one function called [ZCTAtoTargetGeography](Code/USAC/collect_acp_data.py). 
+This takes in the target geography and returns the ACP Tracker data crosswalked to the target geography.
