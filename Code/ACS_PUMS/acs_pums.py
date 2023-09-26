@@ -1412,7 +1412,8 @@ def createDeliverableFiles(data_dir: str):
 
     df = df.dropna(subset=["Medicaid expansion (1)"])
 
-    df = df[["state", " stusps", "Medicaid expansion (1)", "Party", "ACP Participation July 23 (2)", "Avg claim $ Jan-Jul 2023 (3)"]]
+    df = df[["state", " stusps", "Medicaid expansion (1)", "Party", "ACP Participation July 23 (2)",
+             "Avg claim $ Jan-Jul 2023 (3)"]]
 
     for file in os.listdir(national_folder):
         if file.endswith(".csv"):
