@@ -202,8 +202,12 @@ found: [addCDFlag](Code/USAC/collect_acp_data.py).
 All of these functions are combined into one function called [ZCTAtoTargetGeography](Code/USAC/collect_acp_data.py). 
 This takes in the target geography and returns the ACP Tracker data crosswalked to the target geography.
 
+
+#### Participation Rate
 To get the participation rate, we use [add_participation_rate_combined](Code/ACS_PUMS/acs_pums.py). This function adds
-the participation rate to all the combined files found in [Change_Eligibility](Data/ACS_PUMS).
+the participation rate to all the combined files found in [Change_Eligibility](Data/ACS_PUMS/Change_Eligibility).
+It does so by adding the most recent subscriber data to the combined eligibility data. The subscriber data is generated
+from the previous code [ZCTAtoTargetGeography](Code/USAC/collect_acp_data.py). After adding the most recent subscriber data, we divide the current
+number of households eligible for ACP by the number of households participating in ACP. This gives us the participation
+rate.
 
-
-### 

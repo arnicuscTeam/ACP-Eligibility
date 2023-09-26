@@ -1214,6 +1214,15 @@ def determine_eligibility(data_dir: str, povpip: int = 200, has_pap: int = 1, ha
 
 
 def add_participation_rate_combined(data_dir: str):
+
+    """
+    This function will add the participation rate to the combined files. It does so by iterating through all the
+    combined files and adding the most recent subscriber count for that geography. It then creates the participation rate
+    by dividing the total subscribers by the total eligible.
+    :param data_dir:
+    :return: None, but saves the data to csv files
+    """
+
     pums_folder = data_dir + "ACS_PUMS/"
     change_data = pums_folder + "Change_Eligibility/"
     acp_data = data_dir + "ACP_Households/"
