@@ -166,10 +166,33 @@ dataframe.
 
 For Metropolitan Division and County crosswalk, we add the names of each area by using the crosswalk files. 
 
-
 Finally, we add the participation rate to the data. The participation rate is the number of people who are participating
-in ACP divided by the number of people who are eligible for ACP. 
+in ACP divided by the number of people who are eligible for ACP.
 
+
+#### Determine Eligibility
+When wanting to determine eligibility for ACP, we use the [determine_eligibility](Code/ACS_PUMS/acs_pums.py) function.
+This allows us to input theoretical changes to the criteria and see how it affects the number of people eligible for 
+ACP. In the previous section, we explain how the function works and the steps for determining eligibility. In our report
+we use the following criteria to determine eligibility: 
+
+- povpip = 135
+- has_pap = 1
+- has_ssip = 1
+- has_hins4 = 1
+- has_snap = 1
+- aian = 1
+- asian = 1
+- black = 1
+- nhpi = 1
+- white = 1
+- hispanic = 1
+- veteran = 1
+- elderly = 1
+- disability = 1
+- eng_very_well = 0
+
+We created this file at the State level. 
 
 ### ACP Enrollment and Claims Tracker (ACP Tracker)
 
