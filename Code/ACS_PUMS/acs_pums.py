@@ -1478,5 +1478,6 @@ def aggregateSavings(data_dir: str):
 if __name__ == '__main__':
     # cleanData("../../Data/")
     # add_participation_rate_combined("../../Data/")
-    createDeliverableFiles("../../Data/")
-    aggregateSavings("../../Data/")
+    # createDeliverableFiles("../../Data/")
+    # aggregateSavings("../../Data/")
+    add_participation_rate_combined("../../Data/")

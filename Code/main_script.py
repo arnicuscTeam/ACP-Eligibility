@@ -94,18 +94,18 @@ def main():
     # downloadCrossWalkFile(link, data_dir, zcta, state)
     # downloadCrossWalkFile(link, data_dir, zcta, puma)
 
-    # ZCTAtoTargetGeography(data_dir, county)
-    # ZCTAtoTargetGeography(data_dir, congressional_district)
-    # ZCTAtoTargetGeography(data_dir, metro)
-    # ZCTAtoTargetGeography(data_dir, state)
-    # ZCTAtoTargetGeography(data_dir, puma)
+    ZCTAtoTargetGeography(data_dir, county)
+    ZCTAtoTargetGeography(data_dir, congressional_district)
+    ZCTAtoTargetGeography(data_dir, metro)
+    ZCTAtoTargetGeography(data_dir, state)
+    ZCTAtoTargetGeography(data_dir, puma)
 
     # for i in range(120, 200):
     #     determine_eligibility(data_dir, povpip=i, geography=state, end_folder="National_Changes/")
 
-    # To test the eligibility function
-    determine_eligibility(data_dir, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1, veteran=1,
-                          disability=1, elderly=1, eng_very_well=1, geography=state)
+    # # To test the eligibility function
+    # determine_eligibility(data_dir, povpip=135, aian=1, asian=1, black=1, hispanic=1, white=1, nhpi=1, veteran=1,
+    #                       disability=1, elderly=1, eng_very_well=1, geography=state)
 
 
 if __name__ == '__main__':

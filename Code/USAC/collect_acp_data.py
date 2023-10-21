@@ -44,8 +44,13 @@ def downloadFile(data_directory: str):
         # In order to name the files dynamically
         file_name = download_link.split("/")[-1]
 
+        if "https" not in download_link:
+            final_link = main_link + download_link
+        else:
+            final_link = download_link
+
         # Download the file
-        r = requests.get(main_link + download_link, allow_redirects=True)
+        r = requests.get(final_link, allow_redirects=True)
 
         # Save the file
         excel_path = os.path.join(download_directory, file_name)
@@ -374,6 +379,6 @@ def ZCTAtoTargetGeography(data_directory: str, target_geo: str, source_col: str 
 
 
 if __name__ == "__main__":
-    # downloadFile("../../Data/")
+    downloadFile("../../Data/")
     combineFiles("../../Data/")
     pass
