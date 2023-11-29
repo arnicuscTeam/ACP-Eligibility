@@ -1276,6 +1276,28 @@ def add_participation_rate_combined(data_dir: str):
         pums_df.to_csv(os.path.join(change_data, file), index=False)
 
 
+# def add_saving_data_to_national(data_dir: str):
+#     """
+#     This function will add the savings data to the national file. It does so by iterating through all the combined files
+#     and adding the savings data for that geography. It then creates the savings rate by dividing the total savings by
+#     the total eligible.
+#     :param data_dir:
+#     :return: None, but saves the data to csv files
+#     """
+#
+#     pums_folder = data_dir + "ACS_PUMS/"
+#     national_folder = pums_folder + "National_Changes/"
+#     acp_data = data_dir + "ACP_Households/"
+#     deliverable_folder = acp_data + "deliverable_file/"
+#
+#     deliverable_df = pd.read_excel(deliverable_folder + "State_135_v2.xlsx", header=0, sheet_name="percentage_eligible_povpip_135_")
+#
+#     # Keep state, stusps, Medicaid expansion (1), Party, ACP Participation Sep 23 (2), Avg claim $ Jan-Sep 2023 (3)
+#
+
+
+
+
 def cleanData(data_dir: str):
     """
     This function will clean the test data and combine it into one file. It does so by iterating through all the
@@ -1421,8 +1443,8 @@ def createDeliverableFiles(data_dir: str):
 
     df = df.dropna(subset=["Medicaid expansion (1)"])
 
-    df = df[["state", " stusps", "Medicaid expansion (1)", "Party", "ACP Participation July 23 (2)",
-             "Avg claim $ Jan-Jul 2023 (3)"]]
+    df = df[["state", " stusps", "Medicaid expansion (1)", "Party", "ACP Participation Sep 23 (2)",
+             "Avg claim $ Jan-Sep 2023 (3)"]]
 
     for file in os.listdir(national_folder):
         if file.endswith(".csv"):
@@ -1443,9 +1465,9 @@ def createDeliverableFiles(data_dir: str):
 
             df_change["Total dif"] = df_change["Current Num Eligible"] - df_change["Num Eligible"]
 
-            df_change["Weighed dif"] = df_change["Total dif"] * df_change["ACP Participation July 23 (2)"]
+            df_change["Weighed dif"] = df_change["Total dif"] * df_change["ACP Participation Sep 23 (2)"]
 
-            df_change["Saving in $"] = df_change["Weighed dif"] * df_change["Avg claim $ Jan-Jul 2023 (3)"]
+            df_change["Saving in $"] = df_change["Weighed dif"] * df_change["Avg claim $ Jan-Sep 2023 (3)"]
 
             df_change.to_csv(national_folder + file, index=False)
 
@@ -1478,6 +1500,6 @@ def aggregateSavings(data_dir: str):
 if __name__ == '__main__':
     # cleanData("../../Data/")
     # add_participation_rate_combined("../../Data/")
-    # createDeliverableFiles("../../Data/")
-    # aggregateSavings("../../Data/")
-    add_participation_rate_combined("../../Data/")
+    # add_participation_rate_combined("../../Data/")
+    createDeliverableFiles("../../Data/")
+    aggregateSavings("../../Data/")
